@@ -1,0 +1,105 @@
+﻿
+/* Class = "UILabel"; text = "What about your email?"; ObjectID = "1Jg-RA-frS"; */
+"1Jg-RA-frS.text" = "ما هو بريدك الالكتروني؟";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "1lo-Z6-gcM"; */
+"1lo-Z6-gcM.text" = "رقم الموبايل";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "214-EY-ZWp"; */
+"214-EY-ZWp.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "Didn't receive code?"; ObjectID = "6EH-s3-aaP"; */
+"6EH-s3-aaP.text" = "لم تستلم رمز التفعيل؟";
+
+/* Class = "UIButton"; normalTitle = "Resend"; ObjectID = "75D-Vn-BNg"; */
+"75D-Vn-BNg.normalTitle" = "اعادة ارسال";
+
+/* Class = "UILabel"; text = "What's your gender?"; ObjectID = "7aB-AO-F8G"; */
+"7aB-AO-F8G.text" = "ما هو النوع؟";
+
+/* Class = "UILabel"; text = "What's your language?"; ObjectID = "8Bz-eY-QvU"; */
+"8Bz-eY-QvU.text" = "What's your language?";
+
+/* Class = "UILabel"; text = "For promotions, changing password and important notifications"; ObjectID = "8OV-ph-cg8"; */
+"8OV-ph-cg8.text" = "للهدايا، وتغيير كلمة السر والاشعارات المهمه";
+
+/* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "B9M-HA-fiX"; */
+"B9M-HA-fiX.normalTitle" = "إنشاء حساب";
+
+/* Class = "UIButton"; normalTitle = "Continue with facebook"; ObjectID = "CVN-dB-lFd"; */
+"CVN-dB-lFd.normalTitle" = "تسجيل بالفيسبوك";
+
+/* Class = "UILabel"; text = "We sent you an SMS!"; ObjectID = "DpN-hD-NI6"; */
+"DpN-hD-NI6.text" = "تم ارسال رساله نصيه إليك";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "EKU-jy-wIX"; */
+"EKU-jy-wIX.normalTitle" = "تسجيل";
+
+/* Class = "UILabel"; text = "PASSWORD"; ObjectID = "Hea-fS-0pm"; */
+"Hea-fS-0pm.text" = "كلمة السر";
+
+/* Class = "UILabel"; text = "What's your name?"; ObjectID = "IMM-PF-NUQ"; */
+"IMM-PF-NUQ.text" = "ما هو اسمك؟";
+
+/* Class = "UILabel"; text = "Enter the confirmation code you received"; ObjectID = "Jy0-Bq-BuA"; */
+"Jy0-Bq-BuA.text" = "ادخل الكود الذي تم ارساله لك";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "LZJ-mI-rTE"; */
+"LZJ-mI-rTE.text" = "النوع";
+
+/* Class = "UILabel"; text = "EMAIL"; ObjectID = "MKF-v1-X6f"; */
+"MKF-v1-X6f.text" = "البريد الالكتروني";
+
+/* Class = "UILabel"; text = "Referral ID"; ObjectID = "MRy-qF-HsL"; */
+"MRy-qF-HsL.text" = "كود الخصم";
+
+/* Class = "UIBarButtonItem"; title = "Forget password?"; ObjectID = "PK7-JV-onF"; */
+"PK7-JV-onF.title" = "نسيت كلمة السر؟";
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "QxS-Tk-XfV"; */
+"QxS-Tk-XfV.text" = "أو";
+
+/* Class = "UILabel"; text = "Repeat password"; ObjectID = "TZ7-vx-SZM"; */
+"TZ7-vx-SZM.text" = "اعادة كلمة السر";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "TZd-el-Os9"; */
+"TZd-el-Os9.text" = "اللغه";
+
+/* Class = "UILabel"; text = "Your password must be between 8 and 16 characters"; ObjectID = "XTF-wa-kMC"; */
+"XTF-wa-kMC.text" = "كلمة السر يجب أن تتكون من 8 إلي 16 حرف أو رقم";
+
+/* Class = "UILabel"; text = "EMAIL"; ObjectID = "bk5-8v-UcW"; */
+"bk5-8v-UcW.text" = "البريد الالكتروني";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "dRv-YW-juF"; */
+"dRv-YW-juF.normalTitle" = "تسجيل جديد";
+
+/* Class = "UILabel"; text = "Create a password"; ObjectID = "den-jG-5dB"; */
+"den-jG-5dB.text" = "انشاء كلمة السر";
+
+/* Class = "UILabel"; text = "Add you phone number"; ObjectID = "l5E-Os-ACu"; */
+"l5E-Os-ACu.text" = "اضف رقم الموبايل";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "pM5-0y-noi"; */
+"pM5-0y-noi.text" = "كلمة السر";
+
+/* Class = "UIButton"; normalTitle = "I Agree to the terms and conditions"; ObjectID = "qDA-S9-qGj"; */
+"qDA-S9-qGj.normalTitle" = "أوافق علي الشروط والأحكام";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "qeF-lz-TLh"; */
+"qeF-lz-TLh.text" = "اسم العائلة";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "u9C-6L-2nb"; */
+"u9C-6L-2nb.normalTitle" = "تسجيل دخول";
+
+/* Class = "UIButton"; normalTitle = "Sign up with facebook"; ObjectID = "xOZ-C5-OdF"; */
+"xOZ-C5-OdF.normalTitle" = "تسجيل بالفيسبوك";
+
+/* Class = "UITextField"; placeholder = "Optional"; ObjectID = "xX8-Gq-tRq"; */
+"xX8-Gq-tRq.placeholder" = "اختياري";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "xkO-uK-R15"; */
+"xkO-uK-R15.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "yHG-UY-afZ"; */
+"yHG-UY-afZ.text" = "الاسم الأول";

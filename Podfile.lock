@@ -1,0 +1,143 @@
+PODS:
+  - Alamofire (4.5.0)
+  - AuthorizeNetAccept (0.3.0)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - Cosmos (15.0.0)
+  - CountryList (1.1)
+  - FacebookCore (0.3.2):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.35)
+  - FacebookLogin (0.3.2):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.3.2)
+    - FBSDKCoreKit (~> 4.35)
+    - FBSDKLoginKit (~> 4.35)
+  - FBSDKCoreKit (4.36.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.36.0):
+    - FBSDKCoreKit
+  - Firebase/Auth (5.7.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.0.3)
+  - Firebase/CoreOnly (5.7.0):
+    - FirebaseCore (= 5.1.2)
+  - Firebase/Messaging (5.7.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.1.1)
+  - FirebaseAuth (5.0.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.0)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.0.0)
+  - FirebaseCore (5.1.2):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.2.1):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMessaging (3.1.1):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleUtilities/Reachability (~> 5.2)
+    - Protobuf (~> 3.1)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - GoogleUtilities/Environment (5.2.3)
+  - GoogleUtilities/Logger (5.2.3):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Reachability (5.2.3):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.0)
+  - Protobuf (3.6.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SideMenu (4.0.0)
+  - SwiftyJSON (4.1.0)
+  - TwilioVideo (2.0.0-beta3)
+  - XLPagerTabStrip (8.0.1)
+
+DEPENDENCIES:
+  - Alamofire (= 4.5.0)
+  - AuthorizeNetAccept (= 0.3.0)
+  - Cosmos (~> 15.0)
+  - CountryList
+  - FacebookLogin
+  - Firebase/Auth
+  - Firebase/Messaging
+  - GoogleMaps
+  - GooglePlaces
+  - SDWebImage
+  - SideMenu
+  - SwiftyJSON
+  - TwilioVideo (= 2.0.0-beta3)
+  - XLPagerTabStrip (~> 8.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AuthorizeNetAccept
+    - Bolts
+    - Cosmos
+    - CountryList
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - Firebase
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - GoogleMaps
+    - GooglePlaces
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - Protobuf
+    - SDWebImage
+    - SideMenu
+    - SwiftyJSON
+    - TwilioVideo
+    - XLPagerTabStrip
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AuthorizeNetAccept: 77963526f1e15d2be30b771f1049ca09c6d11524
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
+  CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
+  FacebookCore: fe93222bb70346730ef33b061d493e9e7a7cb1f5
+  FacebookLogin: a4e225974791c82836765a294582b4778baffc07
+  FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
+  FBSDKLoginKit: 8bccb6064708ab2f4251a7fc4e3b6d8d00ad91ba
+  Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
+  FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
+  FirebaseCore: 3a97432acb324b439fbed338e642f9cbb516a63d
+  FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebaseMessaging: 698c94dd1e3436346c29bb9c85dcdca4c4a0c30b
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  TwilioVideo: 08cada2c04a7a908655fd80a1423a9c762344625
+  XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
+
+PODFILE CHECKSUM: 4b05302d3812649c052ca4dab38032ba61e77e10
+
+COCOAPODS: 1.6.0.beta.1

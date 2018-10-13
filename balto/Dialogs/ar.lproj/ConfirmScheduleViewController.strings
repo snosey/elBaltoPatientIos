@@ -1,0 +1,18 @@
+﻿
+/* Class = "UILabel"; text = "Total Fare"; ObjectID = "4dQ-kv-yX4"; */
+"4dQ-kv-yX4.text" = "التكلفه الإجماليه";
+
+/* Class = "UILabel"; text = "Credit"; ObjectID = "JVu-UP-iKh"; */
+"JVu-UP-iKh.text" = "البطاقه الائتمانيه";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mx2-ZK-5mn"; */
+"Mx2-ZK-5mn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WBu-j5-rmW"; */
+"WBu-j5-rmW.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ygn-hY-OUX"; */
+"Ygn-hY-OUX.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "ieE-9p-hhN"; */
+"ieE-9p-hhN.normalTitle" = "تأكيد";

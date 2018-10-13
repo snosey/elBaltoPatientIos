@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PastSectionHeaderView" customModule="ElBalto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9E-dO-Fof">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <color key="backgroundColor" red="0.99215686270000003" green="0.35686274509999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="contentEdgeInsets" minX="48" minY="0.0" maxX="48" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                    <state key="normal" title="Filter"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-Hk-uyX">
+                    <rect key="frame" x="16" y="16" width="23" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="XQH-lt-KDb"/>
+                        <constraint firstAttribute="width" secondItem="8Nh-Hk-uyX" secondAttribute="height" multiplier="1:1" id="oYZ-K4-XrD"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="uKj-h9-sy7"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-YU-044">
+                    <rect key="frame" x="320" y="0.0" width="55" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jqf-YU-044" secondAttribute="height" multiplier="1:1" id="eoX-8d-zjm"/>
+                    </constraints>
+                    <state key="normal" title="All">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jqf-YU-044" firstAttribute="bottom" secondItem="A9E-dO-Fof" secondAttribute="bottom" id="0JD-pB-pCA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A9E-dO-Fof" secondAttribute="trailing" id="6hE-Tw-AYD"/>
+                <constraint firstItem="A9E-dO-Fof" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="G3h-mi-r5d"/>
+                <constraint firstItem="8Nh-Hk-uyX" firstAttribute="top" secondItem="A9E-dO-Fof" secondAttribute="top" constant="16" id="Nrc-om-Oik"/>
+                <constraint firstItem="8Nh-Hk-uyX" firstAttribute="leading" secondItem="A9E-dO-Fof" secondAttribute="leading" constant="16" id="OUh-U2-Cm0"/>
+                <constraint firstItem="jqf-YU-044" firstAttribute="top" secondItem="A9E-dO-Fof" secondAttribute="top" id="SwC-2M-y5D"/>
+                <constraint firstItem="A9E-dO-Fof" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="TQJ-pC-FSG"/>
+                <constraint firstItem="8Nh-Hk-uyX" firstAttribute="bottom" secondItem="A9E-dO-Fof" secondAttribute="bottom" constant="-16" id="Wg9-K4-YSn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="A9E-dO-Fof" secondAttribute="bottom" constant="16" id="YIW-Ia-9yI"/>
+                <constraint firstItem="jqf-YU-044" firstAttribute="trailing" secondItem="A9E-dO-Fof" secondAttribute="trailing" id="eJa-CF-kvJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="buttonAll" destination="jqf-YU-044" id="dVJ-mi-oUK"/>
+                <outlet property="buttonDate" destination="A9E-dO-Fof" id="43s-Hx-8CD"/>
+            </connections>
+            <point key="canvasLocation" x="39.5" y="-243.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar" width="40" height="40"/>
+    </resources>
+</document>
