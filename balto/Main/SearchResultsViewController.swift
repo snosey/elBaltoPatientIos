@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let nib_identifier = "doctorViewCellTableViewCell"
+fileprivate let chat_nib_identifier = "toMessagesViewControllerSegue"
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PickerDelegate {
     
     enum SortBy: String {
@@ -17,11 +19,13 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var doctors = [Doctor]()
-    
+    var forChat: Bool = false
+    var id_doctor: Doctor!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "search")
+        tableView.register(UINib(nibName: "doctorViewCellTableViewCell", bundle: nil), forCellReuseIdentifier: "doctorViewCellTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -96,13 +100,32 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "search", for: indexPath) as! SearchResultTableViewCell
+       
+        if forChat == true {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "doctorViewCellTableViewCell", for: indexPath) as! doctorViewCellTableViewCell
+            
+            let doctor = doctors[indexPath.row]
+            
+            cell.setDetails(vc: self, doctor: doctor)
+            
+            cell.closure = {
+                self.id_doctor = doctor
+                self.performSegue(withIdentifier: "toMessagesViewControllerSegue", sender: self)
+            }
+            
+            return cell
+            
+        }else {
         
-        let doctor = doctors[indexPath.row]
-        
-        cell.setDetails(vc: self, doctor: doctor)
-        
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "search", for: indexPath) as! SearchResultTableViewCell
+            
+            let doctor = doctors[indexPath.row]
+            
+            cell.setDetails(vc: self, doctor: doctor)
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -116,5 +139,14 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         vc.doctorId = doctors[indexPath.row].id
         self.show(vc, sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == chat_nib_identifier {
+            if let dest = segue.destination as? chatViewController {
+                dest.id_doctor = self.id_doctor
+            }
+        }
     }
 }

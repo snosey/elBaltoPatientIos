@@ -31,15 +31,17 @@ public class NotificationHandler {
         
         //        let reservationDate = Date().addingTimeInterval(16 * 60)
         
-        let notification1Min = reservationDate.addingTimeInterval(-1 * 60)
+//        let notification1Min = reservationDate.addingTimeInterval(-1 * 60)
         
         let notification15Mins = reservationDate.addingTimeInterval(-15 * 60)
         
-        if false && notification1Min > Date() {
+//        let notification5Mins = reservationDate.addingTimeInterval(-5 * 60)
+        
+        /*if notification1Min > Date() {
             
             let content1Min = UNMutableNotificationContent()
-            content1Min.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "1MinNotificationTitle", comment: "")
-            content1Min.body = LocalizationSystem.sharedInstance.localizedStringForKey(key: "1MinNotificationBody", comment: "")
+            content1Min.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "alarmComingReservation1", comment: "")
+            content1Min.body = " "
             content1Min.sound = UNNotificationSound(named: "skyline.mp3")
             
             content1Min.userInfo["time_in_secs"] = notification1Min.timeIntervalSince1970
@@ -62,17 +64,17 @@ public class NotificationHandler {
             
             let identifier1Min = "reservation1min\(reservation.id)"
             
-            schedule(date: notification1Min, identifier: identifier1Min, content: content1Min)
+            /*schedule(date: notification1Min, identifier: identifier1Min, content: content1Min)*/
         } else {
             
             return
-        }
+        }*/
         
         if notification15Mins > Date() {
             
             let content15Mins = UNMutableNotificationContent()
-            content15Mins.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "15MinsNotificationTitle", comment: "")
-            content15Mins.body = LocalizationSystem.sharedInstance.localizedStringForKey(key: "15MinsNotificationBody", comment: "")
+            content15Mins.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "alarmComingReservation", comment: "")
+            content15Mins.body = " "
             content15Mins.sound = UNNotificationSound(named: "skyline.mp3")
             
             var notification = [String: Any]()
@@ -97,6 +99,37 @@ public class NotificationHandler {
             
             schedule(date: notification15Mins, identifier: identifier15Mins, content: content15Mins)
         }
+        /*
+        if notification5Mins > Date() {
+            
+            let content5Mins = UNMutableNotificationContent()
+            content5Mins.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "alarmComingReservation5", comment: "")
+            content5Mins.body = LocalizationSystem.sharedInstance.localizedStringForKey(key: "", comment: "")
+            content5Mins.sound = UNNotificationSound(named: "skyline.mp3")
+            
+            var notification = [String: Any]()
+            notification["title"] = content5Mins.title
+            notification["body"] = content5Mins.body
+            notification["sound"] = "skyline.mp3"
+            content5Mins.userInfo["notification"] = notification
+            
+            content5Mins.userInfo["time_in_secs"] = notification5Mins.timeIntervalSince1970
+            content5Mins.userInfo["showNotification"] = false
+            
+            var data = [String: Any]()
+            
+            var payload = [String: Any]()
+            payload["kind"] = "bookingRequest"
+            payload["data"] = "\(reservation.id)"
+            
+            data["payload"] = payload
+            content5Mins.userInfo["data"] = data
+            
+            let identifier5Mins = "reservation5mins\(reservation.id)"
+            
+            schedule(date: notification5Mins, identifier: identifier5Mins, content: content5Mins)
+        }
+ */
     }
     
     @available(iOS 10.0, *)

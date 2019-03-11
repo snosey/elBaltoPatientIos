@@ -49,6 +49,8 @@ class User: BaseModel {
     
     var image: String!
     
+    var card_type: String?
+    
     //id_doctor_kind
     //id_language
     //id_government
@@ -94,6 +96,11 @@ class User: BaseModel {
         token = jsonDic["video_token"] as? String ?? ""
         
         fcmToken = jsonDic["fcm_token"] as? String
+        
+        if let t = jsonDic["card_type"] as? String {
+            
+            self.card_type = t.replacingOccurrences(of: "<null>", with: "")
+        }
         
         if let t = jsonDic["payment_token"] as? String {
             

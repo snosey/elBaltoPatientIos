@@ -11,7 +11,7 @@ import Foundation
 class TransactionsModel {
     
     var state: String = ""
-    var amount: Double  = 0.0
+    var amount: Int  = 0
     var paymentWay: String = ""
     var created_at: String = ""
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ReservationTableCell: UITableViewCell {
     
@@ -38,6 +39,10 @@ class ReservationTableCell: UITableViewCell {
     
     private var canRate: Bool!
     
+    
+    static var rate: Int? = nil
+    static var review: String? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -45,28 +50,24 @@ class ReservationTableCell: UITableViewCell {
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
+    
         if sender === buttonCall {
             
             if isOnlineConsulting {
                 
                 let startDate = DateUtils.getDate(dateString: reservation.date, dateFormat: "\(DateUtils.SERVER_DATE_FORMAT) \(DateUtils.SERVER_TIME_SHORT_FORMAT)")
-                // ask Eng: ElSnosey first if wanna to remove this first (this's useless)
+                let serviceDuration = reservation.serviceDuration!
+                let endDate = startDate.addingTimeInterval(TimeInterval(serviceDuration * 60))
+                // ask Eng: ElSnosey first if he wanna remove this first (this's useless)
                let mins = reservation.orignalDate.timeIntervalSinceNow / 60
                 
                 if mins > 0 {
-
-                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "pleaseWaitDoctor", comment: ""))
                     
-                } else if !Constants.override && startDate > Date() {
-                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "pleaseWaitDoctor", comment: ""))
-                    // this should be an if statement  not else if u executed the comment of (ask Eng:)
+                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "waitToBookTime", comment: ""))
+                    
                 } else {
-                
-                    if Constants.override || reservation.stateId > 2 {
-                        
-                        let serviceDuration = reservation.serviceDuration!
-                        
-                        let endDate = startDate.addingTimeInterval(TimeInterval(serviceDuration * 60))
+                    
+                    if Constants.override || reservation.stateId >= 3 {
                         
                         if Constants.override || endDate > Date() {
                             
@@ -78,11 +79,28 @@ class ReservationTableCell: UITableViewCell {
                             }
                             
                         } else {
-                            
-                            Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "appointment_ended", comment: ""))
+                            Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "wrongAppoinment", comment: ""))
                         }
                     } else {
-                        Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "pleaseWaitDoctor", comment: ""))
+                        // doctor's didn't come yet but time has been started
+                        if let content = getContentSesion() {
+                            if endDate <= Date() {
+                                // TODO: //CHECK IF TIME ENDED
+                                content.updateBooking(with: self.reservation, toState: 9)
+                                
+                                if let wallet_id = self.reservation.wallet_id, wallet_id != 0 {
+                                    
+                                    let params = [
+                                        "id": wallet_id,
+                                        "state": 6,
+                                    ] as [String : Any]
+                                    DoctorsAPIS.updateUserTransaction(params: params, completion: { (success, error) in
+                                    })
+                                }
+                                
+                            }
+                            Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "pleaseWaitDoctor", comment: ""))
+                        }
                     }
                 }
                 // HOME VISIT .
@@ -106,20 +124,31 @@ class ReservationTableCell: UITableViewCell {
                 // cancel
                 let mins = reservation.orignalDate.timeIntervalSinceNow / 60
                 
-                if mins > 59 && reservation.stateId < 3 {
+                // you can cancel
+                if mins > 59 && reservation.stateId <= 3 {
                     
                     if let content = getContentSesion() {
                         
                         Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "areYouSure", comment: ""), style: .alert, actionColors: [UIColor.green, UIColor.pink], UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "cancel", comment: ""), style: .cancel, handler: nil), UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "ok", comment: ""), style: .default, handler: { (action) in
                             
-                            content.updateBooking(with: self.reservation, toState: 7)
+                            if let wallet_id = self.reservation.wallet_id as? Int {
+                                
+                                let params = [
+                                    "id": wallet_id,
+                                    "state": 6,
+                                ] as [String : Any]
+                                DoctorsAPIS.updateUserTransaction(params: params, completion: { (success, error) in
+                                })
+                            }
+                            content.updateBooking(with: self.reservation, toState: 6)
                             
                         }))
                     }
                     
-                } else if reservation.stateId < 3 {
+                }else if reservation.stateId <= 3 && mins <= 0 {
                     // cannot cancel because of time
-                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "cantCancel", comment: ""))
+                    
+                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "doctor is in", comment: ""))
                     
                 } else {
                     // cannot cancel because of reservation already started .
@@ -135,15 +164,14 @@ class ReservationTableCell: UITableViewCell {
                     
                     vc.show(TrackDoctorViewController.getInstance(doctorId: reservation.idDoctor), sender: self)
                 } else {
-                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "wait_for_dr_start", comment: ""))
+                    Toast.showAlert(viewController: vc, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "pleaseWaitDoctor", comment: ""))
                 }
             }
             
         } else if sender === buttonAction2 {
             
             if isUpcoming {
-                
-                // cancel
+                //cancel
                 let mins = reservation.orignalDate.timeIntervalSinceNow / 60
                 if mins > 59 && reservation.stateId < 3 {
                     
@@ -177,6 +205,7 @@ class ReservationTableCell: UITableViewCell {
             }
             self.vc.present(vc, animated: true, completion: nil)
         }
+        
     }
     
     @IBAction func rate(_ sender: UIButton) {
@@ -189,10 +218,29 @@ class ReservationTableCell: UITableViewCell {
                 return false
             }
             self.vc.present(vc, animated: true, completion: nil)
+        }else {
+            
+            if let rate = reservation.rate as? String {
+                ReservationTableCell.rate = Int(rate)
+            }
+            
+            if let review = reservation.review as? String {
+                ReservationTableCell.review = review
+            }
+            
+            let vc = EditReviewViewController(bookingId: reservation.id) { _ in
+                
+                self.vc.viewDidAppear(true)
+                
+                return false
+            }
+            self.vc.present(vc, animated: true, completion: nil)
+            
         }
     }
     
     func setDetails(vc: UIViewController, isUpcoming: Bool, reservation: Reservation) {
+        
         self.vc = vc
         self.isUpcoming = isUpcoming
         self.reservation = reservation
@@ -211,11 +259,20 @@ class ReservationTableCell: UITableViewCell {
         
         self.isOnlineConsulting = reservation.doctorKind.id == 2
         
-        if let image = reservation.image, !image.isEmpty {
+        if let imagePath = reservation.image, !imagePath.isEmpty {
             
-            imageViewProfile.sd_setImage(with: URL(string: image), completed: nil)
+//            imageViewProfile.sd_setImage(with: URL(string: imagePath), completed: nil)
+            
+            let image = imagePath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+            
+            DispatchQueue.main.async {
+                self.imageViewProfile.sd_setShowActivityIndicatorView(true)
+                self.imageViewProfile.sd_setIndicatorStyle(.gray)
+                self.imageViewProfile.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "\(image).png"))
+            }
+
+            
         } else {
-            
             imageViewProfile.image = UIImage(named: "logo_profile")
         }
         
@@ -226,6 +283,7 @@ class ReservationTableCell: UITableViewCell {
             
             setupForHomeVisit(isUpcoming: isUpcoming)
         }
+        
     }
     
     func setupForHomeVisit(isUpcoming: Bool) {
@@ -273,6 +331,7 @@ class ReservationTableCell: UITableViewCell {
         labelName.text = reservation.name
         labelSpecialization.text = reservation.subCategoryName
         labelDate.text = reservation.date
+        
         labelPrice.text = "\(reservation.price!) EGP"
         
         buttonAction1.setImage(nil, for: .normal)

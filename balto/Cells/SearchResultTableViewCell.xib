@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_new" translatesAutoresizingMaskIntoConstraints="NO" id="Wvg-m6-5SH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOj-aP-mlz" customClass="RoundedEdgeView" customModule="ElBalto" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
                         <subviews>
@@ -121,11 +124,15 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.90212563450000005" green="0.90212563450000005" blue="0.90212563450000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="Wvg-m6-5SH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4e2-jl-Wrb"/>
                     <constraint firstItem="BOj-aP-mlz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Six-Tl-oFY"/>
                     <constraint firstItem="BOj-aP-mlz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ez8-gr-LpL"/>
                     <constraint firstAttribute="bottom" secondItem="BOj-aP-mlz" secondAttribute="bottom" constant="16" id="gFy-Gs-yXp"/>
+                    <constraint firstAttribute="bottom" secondItem="Wvg-m6-5SH" secondAttribute="bottom" id="lNk-R1-LqA"/>
+                    <constraint firstAttribute="trailing" secondItem="Wvg-m6-5SH" secondAttribute="trailing" id="nfW-Sc-ehN"/>
+                    <constraint firstItem="Wvg-m6-5SH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="q4I-RL-vih"/>
                     <constraint firstAttribute="trailing" secondItem="BOj-aP-mlz" secondAttribute="trailing" id="sZj-VP-xDL"/>
                 </constraints>
             </tableViewCellContentView>
@@ -141,6 +148,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="background_new" width="1080" height="1920"/>
         <image name="book_button" width="112" height="49"/>
         <image name="logo_profile" width="128" height="128"/>
         <image name="money" width="25" height="25"/>

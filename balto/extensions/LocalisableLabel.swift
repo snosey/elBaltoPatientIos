@@ -29,3 +29,25 @@ class LocalisableButton: UIButton {
     }
     
 }
+
+class LocalisableBarButton: UIBarButtonItem {
+    
+    @IBInspectable var localisedKey: String? {
+        didSet {
+            guard let key = localisedKey else { return }
+            self.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: key, comment: "")
+        }
+    }
+    
+}
+
+class LocalisableImageName: UIImageView {
+    
+    @IBInspectable var localisedKey: String? {
+        didSet {
+            guard let key = localisedKey else { return }
+            self.image = UIImage(named: LocalizationSystem.sharedInstance.localizedStringForKey(key: key, comment: "")) 
+        }
+    }
+    
+}

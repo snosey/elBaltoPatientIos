@@ -22,7 +22,8 @@ public class ContentSession: BaseUrlSession {
     private let count = 50
     
     public enum ActionType {
-        case getDoctorFilters, getDoctorSubCategories, getDoctorGenders, getDoctorLanguages, getDoctors, getDoctorSchedule, addSchedule, getReservations, addBooking, updateBooking, cancelBooking, getCoupons, nearestDoctor, getDoctorData, mainCategories, subCategories, notify, createRoom, rateBooking, getDoctorLocation, getBookingData, updateUser, getDoctorReviews, PaymentSession, addPayment, doctorPercentageMoney, getUserData, uploadImage, checkCoupon
+        case getDoctorFilters, getDoctorSubCategories, getDoctorGenders, getDoctorLanguages, getDoctors,
+             getDoctorsForChat, getDoctorSchedule, addSchedule, getReservations, addBooking, updateBooking, cancelBooking, getCoupons, nearestDoctor, getDoctorData, mainCategories, subCategories, notify, createRoom, rateBooking, getDoctorLocation, getBookingData, updateUser, getDoctorReviews, PaymentSession, addPayment, doctorPercentageMoney, getUserData, uploadImage, checkCoupon
     }
     
     override init() {
@@ -74,6 +75,33 @@ public class ContentSession: BaseUrlSession {
             url.put("day", String(format: "%02d", calendar.component(Calendar.Component.day, from: date)))
                 .put("month", String(format: "%02d", calendar.component(Calendar.Component.month, from: date)))
                 .put("year", String(format: "%02d", calendar.component(Calendar.Component.year, from: date)))
+        }
+        
+        requestConnection(action: actionType, url: url.build(), shouldCache: true)
+    }
+    
+    
+    func getDoctorsForChat(name: String = "", subId: Int! = nil, languageId: Int! = nil, genderId: Int! = nil) {
+        
+        let actionType = ActionType.getDoctorsForChat
+        
+        let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/getAvailableDoctorToChat?")
+            .put("name", name)
+            .put("type", Constants.language)
+        
+        if let sub = subId {
+            
+            url.put("id_sub", "\(sub)")
+        }
+        
+        if let language = languageId {
+            
+            url.put("id_language", "\(language)")
+        }
+        
+        if let gender = genderId {
+            
+            url.put("id_gender", "\(gender)")
         }
         
         requestConnection(action: actionType, url: url.build(), shouldCache: true)
@@ -297,7 +325,7 @@ public class ContentSession: BaseUrlSession {
             sendNotification(bookingId: reservation.id, fcmToken: reservation.fcmToken, kind: NotificationHandler.Kind.doctorStart, title: "", message: "")
             break
         case 4:
-            sendNotification(bookingId: reservation.id, fcmToken: reservation.fcmToken, kind: NotificationHandler.Kind.bookingStateWorking, title: "", message: "")
+//            sendNotification(bookingId: reservation.id, fcmToken: reservation.fcmToken, kind: NotificationHandler.Kind.bookingStateWorking, title: "", message: "")
             break
         case 5:
             sendNotification(bookingId: reservation.id, fcmToken: reservation.fcmToken, kind: NotificationHandler.Kind.bookingStateDone, title: "", message: "")
@@ -427,7 +455,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/userRateData?")
         url.put("id_user", patientId)
-            .put("type", "client")
+        .put("type", "client")
         
         requestConnection(action: actionType, url: url.build(), shouldCache: true)
     }
@@ -468,49 +496,66 @@ public class ContentSession: BaseUrlSession {
     func sendNotification(bookingId: Int, fcmToken: String!, kind: NotificationHandler.Kind, title: String, message: String) {
         
         if let fcmToken = fcmToken, !fcmToken.isEmpty {
+            
         } else {
             return
         }
         
+        var title : String = ""
         var kindName: String!
         
         switch kind {
         case .bookingStateStart:
             kindName = "3"
+            title = "video_room_is_created"
             break
         case .bookingStateWorking:
             kindName = "4"
+            title = "doctorArrive"
             break
         case .bookingStateDone:
             kindName = "5"
+            title = "doctorFinished"
             break
         case .bookingStateCancel:
             if #available(iOS 10.0, *) {
                 NotificationHandler.cancelNotificationFor(reservationId: bookingId)
             }
-            kindName = "7"
+            kindName = "8"
+            title = "reservationPatientCancel"
             break
         default:
             kindName = kind.rawValue
+            
+            if kind.rawValue == "bookingRequest" {
+                title = "bookingRequestMessage"
+            }
+            if kind.rawValue == "bookingRequestOnline" {
+                title = "newReservation"
+            }
+            if kind.rawValue == "video_room_is_created" {
+                title = "video_room_is_created"
+                return 
+            }
             break
         }
         
-        let title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "\(kind.rawValue)TitleD", comment: "")
-        let message = LocalizationSystem.sharedInstance.localizedStringForKey(key: "\(kind.rawValue)BodyD", comment: "")
+        title = LocalizationSystem.sharedInstance.localizedStringForKey(key: title, comment: "")
+        let message = ""
         
-        if title.elementsEqual("\(kind.rawValue)TitleD") {
-            return
-        }
+//        if title.elementsEqual("\(kind.rawValue)TitleD") {
+//            return
+//        }bookingStateStart
         
         let actionType = ActionType.notify
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/sendNotification/sendNotification.php?")
         
-        url.put("reg_id[]", fcmToken)
-            .put("data", bookingId)
-            .put("kind", kindName)
-            .put("title", title)
-            .put("message", message)
+        url.put("reg_id[]", "\(fcmToken ?? "")")
+            .put("data", "\(bookingId)")
+            .put("kind", "\(kindName ?? "")")
+            .put("title", "\(title)")
+            .put("message", "\(message)")
             .put("FIREBASE_API_KEY", "AAAAg9tN8oI:APA91bE_9tV2K5V98_ZcimKSJ0Uk3EQ_qLIznI3SH7IFOjgjWCRxEdkwf-zTfIHFaJ1gN8z56GN3gghaxqR_WdlSBZASqwzjJdEGPqD2ewz9iIlkK387OWzcz20fpot1L48S6l1RTeak")
         
         requestConnection(action: actionType, url: url.build(), shouldCache: false)
@@ -725,6 +770,17 @@ public class ContentSession: BaseUrlSession {
         requestConnection(action: actionType, url: url.build(), shouldCache: true)
     }
     
+    func checkCopoun(code: String, id_user: Int)  {
+        
+        let actionType = ActionType.checkCoupon
+        
+        let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/checkCouponNew?")
+        url.put("code", code)
+        url.put("id_user", id_user)
+        
+        requestConnection(action: actionType, url: url.build(), shouldCache: true)
+    }
+    
     override func onPreExecute(action: Any) {
         delegate.onPreExecute(action: action as! ContentSession.ActionType)
     }
@@ -802,6 +858,21 @@ public class ContentSession: BaseUrlSession {
                     break
                 case .getDoctors:
                     
+                    jsonArray = jsonObject["users"] as! [[String: Any]]
+                    
+                    var doctors = [Doctor]()
+                    
+                    for item in jsonArray {
+                        
+                        if let doctor = try? Doctor(jsonDic: item) {
+                            
+                            doctors.append(doctor)
+                        }
+                    }
+                    
+                    delegate.onPostExecute(status: Status(200, true, ""), action: actionType, response: doctors)
+                    break
+                case .getDoctorsForChat :
                     jsonArray = jsonObject["users"] as! [[String: Any]]
                     
                     var doctors = [Doctor]()

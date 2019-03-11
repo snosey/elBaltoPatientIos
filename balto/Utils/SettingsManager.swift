@@ -31,6 +31,13 @@ class SettingsManager {
         return ""
     }
     
+    func getCardType() -> String{
+        if let object = userDefault.object(forKey: Settings.DeviceToken.rawValue) {
+            return object as! String
+        }
+        return ""
+    }
+    
     func setFirstTime(value : Bool) {
        let _ =  save(object: value, setting: Settings.FirstTime)
     }
@@ -81,6 +88,7 @@ class SettingsManager {
             
             let _ = PaymentSession.saveWith(key: "card_subtype", value: type)
         }
+        
     }
     
     func getUser () -> User {

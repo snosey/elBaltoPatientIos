@@ -210,15 +210,15 @@ class RegistrationViewController: UIViewController, AccountDelegate, PickerDeleg
         let confPassword = textFieldConfPassword.text!
         if password.count < 8 {
             
-            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "WrongPassword", comment: ""))
+            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "shortPassword", comment: ""))
             return
         } else if password.count > 16 {
             
-            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "password_long", comment: ""))
+            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "shortPassword", comment: ""))
             return
         } else if password.compare(confPassword) != .orderedSame {
             
-            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "WrongPassword", comment: ""))
+            Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "passwords_not_matching", comment: ""))
             return
         }
         

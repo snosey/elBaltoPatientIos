@@ -25,14 +25,17 @@ class ReservationsViewController: ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { (oldCell, newCell, progress, changeCurrent, animated) in
             
             if changeCurrent {
-                
                 oldCell?.label.textColor =  UIColor.gray
                 newCell?.label.textColor =  UIColor.black
             }
         }
         
-        super.viewDidLoad()
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        settings.style.buttonBarItemLeftRightMargin = 40
         
+        settings.style.buttonBarMinimumInteritemSpacing = 10
+        
+        super.viewDidLoad()
         view.layoutSubviews()
     }
     

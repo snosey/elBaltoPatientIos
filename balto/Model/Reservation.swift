@@ -74,6 +74,8 @@ class Reservation: BaseModel {
     var date: String!
     
     var rate: String!
+    var id_rate: Int!
+    var review: String!
     var image: String!
     
     var diagnosis: String!
@@ -104,6 +106,7 @@ class Reservation: BaseModel {
     var orignalDate : Date!
     
     var idCouponClient: Int!
+    var wallet_id: Int!
     
     init(jsonDic: [String: Any]) {
         
@@ -124,16 +127,22 @@ class Reservation: BaseModel {
         date = "\(year)-\(month)-\(day) \(hour):\(min)"
         
         if let rate = jsonDic["rate"] as? Int {
-            
             self.rate = "\(rate)"
         } else if let rate = jsonDic["rate"] as? String {
-            
             self.rate = rate
         }
         
+        self.id_rate = jsonDic["id_rate"] as? Int
+        if let review = jsonDic["review"] as? String {
+            self.review = review as! String
+        }
+        
         if let image = jsonDic["image"] as? String, !image.isEmpty {
-            
-            self.image = "http://haseboty.com/doctor/public/images/\(image)"
+            if image.hasPrefix("http") {
+                self.image = image
+            }else {
+                self.image = "http://haseboty.com/doctor/public/images/\(image)"
+            }
         } else {
             self.image = ""
         }
@@ -143,6 +152,7 @@ class Reservation: BaseModel {
         
         idDoctor = jsonDic["id_doctor"] as? Int ?? 0
         idClient = jsonDic["id_client"] as? Int ?? 0
+        wallet_id = jsonDic["wallet_id"] as? Int ?? 0
         
         doctorKind = BaseModel(id: jsonDic["id_doctor_kind"] as? Int ?? 0, name: jsonDic["doctorKindName"] as? String ?? "")
         

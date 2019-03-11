@@ -14,6 +14,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     
     let PROFESSION_PICKER_TAG = 3
     let SPECIALIZATION_PICKER_TAG = 4
+    var forChat: Bool = false
     
     @IBOutlet weak var buttonProfession: UIButton!
     
@@ -22,6 +23,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     @IBOutlet weak var textFieldName: UITextField!
     
     @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var labelDateView: UIView!
     
     var content: ContentSession!
     var loadingView: LoadingView!
@@ -55,6 +57,11 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
         buttonProfession.setTitle("Any", for: .normal)
         
         content.getDoctorFilters()
+        
+        if self.forChat == true {
+            self.labelDateView.isHidden = true
+            self.title = "Chat"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +71,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.topItem?.title = ""
+         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     @IBAction func chooseDate(_ sender: UIButton) {
@@ -76,11 +83,17 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     @IBAction func next(_ sender: UIButton) {
         
         if let name = textFieldName.text, !name.isEmpty {
-            
-            content.getDoctors(date: date, name: name, subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            if forChat == true {
+                content.getDoctorsForChat(name: name, subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            }else {
+                content.getDoctors(date: date, name: name, subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            }
         } else {
-            
-            content.getDoctors(date: date, subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            if forChat == true {
+                content.getDoctorsForChat(subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            }else {
+                content.getDoctors(date: date, subId: category?.id ?? nil, languageId: nil, genderId: nil)
+            }
         }
     }
     
@@ -191,6 +204,22 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
                     
                     let vc = storyboard?.instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
                     vc.doctors = doctors
+                    self.show(vc, sender: self)
+                
+                }
+                break
+            case .getDoctorsForChat:
+                
+                let doctors = response as! [Doctor]
+                
+                if doctors.isEmpty {
+                    
+                    Toast.showAlert(viewController: self, text: "No result")
+                } else {
+                    
+                    let vc = storyboard?.instantiateViewController(withIdentifier: "SearchResultsForChatViewController") as! SearchResultsViewController
+                    vc.doctors = doctors
+                    vc.forChat = true
                     self.show(vc, sender: self)
                 }
                 break

@@ -10,15 +10,24 @@ import UIKit
 
 class rightChatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageMessage: UIImageView!
+    @IBOutlet weak var labelMessage: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = 8
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configCell(message: String) {
+        if message.hasPrefix("http") == true {
+            self.imageMessage.findMe(url: message)
+        }else {
+            self.imageMessage.isHidden = true
+            self.labelMessage.text = message
+        }
     }
+    
     
 }

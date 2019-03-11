@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         content.getDoctor(doctorId: doctorId)
         content.getReviewsBy(doctorId: doctorId)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

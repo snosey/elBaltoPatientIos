@@ -14,4 +14,13 @@ struct APIS_URLS {
     static let walletPayment : String = "http://haseboty.com/doctor/public/api/walletPaymentGuide"
     static let onlinePayment : String = "http://haseboty.com/doctor/public/api/onlinePaymentGuide"
     static let addUserTransaction : String = "http://haseboty.com/doctor/public/api/addTransaction"
+    static let updateUserTransaction : String = "http://haseboty.com/doctor/public/api/updateWalletState"
+    static let editRateBooking : String = "http://haseboty.com/doctor/public/api/editRateBooking"
+    static let deleteRateBooking : String = "http://haseboty.com/doctor/public/api/deleteRateBooking"
+    
+    static let getMessages : String = "http://haseboty.com/doctor/public/api/getChats"
+    static let getMessagesInchat : String = "http://haseboty.com/doctor/public/api/getMessages"
+    static let createMessage : String = "http://haseboty.com/doctor/public/api/createMessage"
+    static let createChat : String = "http://haseboty.com/doctor/public/api/createChat"
+    
 }

@@ -44,6 +44,10 @@ class PastReservationsViewController: UITableViewController, ContentDelegate, In
         content = ContentSession(delegate: self)
         
         userId = SettingsManager().getUserId()
+        
+        NotificationCenter.default.addObserver(forName: .pastReservation, object: nil, queue: OperationQueue.main) { (notification) in
+            self.viewDidAppear(true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

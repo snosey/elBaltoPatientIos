@@ -155,6 +155,7 @@ public class BaseUrlSession: NSObject {
                 self.onSuccess(action: action, response: response.response, data: response.data!)
                 do {
                     let jsonResult = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                    
                     print(jsonResult)
                 } catch {
                     print(NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) ?? "")
@@ -309,6 +310,7 @@ public class BaseUrlSession: NSObject {
             self.onSuccess(action: action, response: response, data: data)
             do {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+                
                 print(jsonResult)
             } catch {
                 print(NSString(data: data, encoding: String.Encoding.utf8.rawValue) ?? "")

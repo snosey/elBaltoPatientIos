@@ -17,11 +17,18 @@ class amanMessageController: UIViewController {
      |==============================
      |
      */
-    var amanNumberSent: Int? = nil
+    var amanNumberSent: Int!
     var mainViewController: MainViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.amnaNumber.text = "go to aman shops and ask about Madfouaat Mutanouea Accept then pay by this bill number \(amanNumberSent!)"
+        
+        let message = LocalizationSystem.sharedInstance.localizedStringForKey(key: "amanDetails", comment: "")
+            + String(amanNumberSent) + LocalizationSystem.sharedInstance.localizedStringForKey(key: "amanDetails2", comment: "")
+         self.amnaNumber.text = message
+        
+        amnaNumber.sizeToFit()
+        amnaNumber.adjustsFontSizeToFitWidth = true
     }
 
     @IBAction func amanMessageClicked(_ sender: UIButton){

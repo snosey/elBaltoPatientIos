@@ -9,6 +9,7 @@ PODS:
   - Bolts/Tasks (1.9.0)
   - Cosmos (15.0.0)
   - CountryList (1.1)
+  - CryptoSwift (0.9.0)
   - FacebookCore (0.3.2):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.35)
@@ -59,11 +60,19 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.0)
   - Protobuf (3.6.1)
+  - PusherSwift (6.1.0):
+    - CryptoSwift (~> 0.9.0)
+    - ReachabilitySwift (~> 4.1.0)
+    - Starscream (~> 3.0.5)
+    - TaskQueue (~> 1.1.1)
+  - ReachabilitySwift (4.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SideMenu (4.0.0)
+  - Starscream (3.0.6)
   - SwiftyJSON (4.1.0)
+  - TaskQueue (1.1.1)
   - TwilioVideo (2.0.0-beta3)
   - XLPagerTabStrip (8.0.1)
 
@@ -77,6 +86,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleMaps
   - GooglePlaces
+  - PusherSwift
   - SDWebImage
   - SideMenu
   - SwiftyJSON
@@ -90,6 +100,7 @@ SPEC REPOS:
     - Bolts
     - Cosmos
     - CountryList
+    - CryptoSwift
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -105,9 +116,13 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - Protobuf
+    - PusherSwift
+    - ReachabilitySwift
     - SDWebImage
     - SideMenu
+    - Starscream
     - SwiftyJSON
+    - TaskQueue
     - TwilioVideo
     - XLPagerTabStrip
 
@@ -117,6 +132,7 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
   CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   FacebookCore: fe93222bb70346730ef33b061d493e9e7a7cb1f5
   FacebookLogin: a4e225974791c82836765a294582b4778baffc07
   FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
@@ -132,12 +148,16 @@ SPEC CHECKSUMS:
   GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  PusherSwift: 6f2535d616cf0d6867a58bee501999995ad37999
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  TaskQueue: 53a3cdaf817d9ce3cd50837ff6610aeb7b968997
   TwilioVideo: 08cada2c04a7a908655fd80a1423a9c762344625
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 4b05302d3812649c052ca4dab38032ba61e77e10
+PODFILE CHECKSUM: 946732d29f36a1212df53088f10fb31e8a3acdea
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+extension Double {
+    
+    var toInt: Int {
+        return Int(self)
+    }
+    
+}

@@ -178,5 +178,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         self.window?.rootViewController = initialViewControlleripad
         self.window?.makeKeyAndVisible()
     }
+    
 }
 

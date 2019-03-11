@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "balto/Cells/ReservationTableCell.swift"
+            timestampString = "565701604.514912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "rate(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElBalto.ReservationTableCell.rate(__C.UIButton) -&gt; ()"
+                  moduleName = "ElBalto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/magiclaptop/Desktop/Swift/Projects/Balto_Patient_ios/balto/Cells/ReservationTableCell.swift"
+                  timestampString = "573925715.7024879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIViewController) -&gt; Swift.Bool in ElBalto.ReservationTableCell.rate(__C.UIButton) -&gt; ()"
+                  moduleName = "ElBalto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/magiclaptop/Desktop/Swift/Projects/Balto_Patient_ios/balto/Cells/ReservationTableCell.swift"
+                  timestampString = "573925715.705743"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

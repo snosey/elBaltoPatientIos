@@ -55,7 +55,7 @@
 "back" ="رجوع";
 "noPromo" ="لا يوجد عروض حاليا , قم بمشاركه التطبيق للحصول على عروض و خصومات";
 "emailDescription" ="للهدايا , وتغير كلمة السر و الاشعارات المهمه";
-"homeMain" ="زياره منزليه";
+"homeMain" = "زياره منزليه ( قريبا )";
 "onlineMain" ="استشاره اونلاين";
 "agreeConditions" = "اوافق على الشروط و الاحكام";
 "Register" = "تسجيل";
@@ -84,6 +84,9 @@
 "coming" = "القادمه";
 "past" = "السابقه";
 "alarmComingReservation" = "لديك حجز بعد 15 دقيقه";
+"alarmComingReservation5" = "لديك حجز بعد 5 دقيقه";
+"alarmComingReservation1" = "لديك حجز بعد 1 دقيقه";
+
 "alarmComingReservationNow" = "لديك حجز الان";
 "ProfissionalBusy" = "جميع ممثلينا مشغولين الآن في خدمة عملاء اخرين, سيتم التواصل معك في اقرب وقت";
 
@@ -194,4 +197,10 @@
 "arrive" ="وصل";
 "cashReceived" ="المستلم نقدا: ";
 "pending" ="المستحق: ";
-"myLang" = "عربي" ;
+
+"myLang" = "English" ;
+"passwords_not_matching" = "كلمه المرور وتاكيد كلمه المرور غير متطابقتان";
+"shortPassword" = "كلمه المرور يجب ان تكون 8-16 حرف" ;
+"newLang" = "E";
+"chat" = "محادثه" ;
+"messages" = "محادثات" ;

@@ -11,9 +11,9 @@ import SideMenu
 
 class SideMenuTableViewController: UITableViewController, AccountDelegate {
 
-    let itemNames = ["Home", "reservation", "wallet", "promotions", "share", "lang", "termAndCondition", "help", "logout"]
+    let itemNames = ["Home", "reservation", "myCredit", "promotions", /*"messages",*/ "share", "termAndCondition", "help", "logout"]
     
-    let itemImages = ["ic_home_blue", "reservation", "ic_payment_blue", "promo", "share-512", "language", "terms and cond", "14_help", "log_out"]
+    let itemImages = ["ic_home_blue", "reservation", "ic_payment_blue", "promo", /*"26_chat",*/ "share-512", "terms and cond", "14_help", "log_out"]
     
     @IBOutlet weak var imageViewProfile: UIImageView!
     @IBOutlet weak var labelName: UILabel!
@@ -36,8 +36,6 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
         
         tableView.estimatedSectionHeaderHeight = 10
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
-        
-        
         
     }
     
@@ -91,7 +89,7 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
             account.addCoupon(userId: userId)
             return
             // language
-        case 5:
+        /*case 5:
            
             self.dismiss(animated: false, completion: nil)
             if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
@@ -117,18 +115,18 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
             
             return
             // terms_and_cond
-        case 6:
+        */case 5:
             let staticContent = storyboard?.instantiateViewController(withIdentifier: "StaticContentViewController") as! StaticContentViewController
             staticContent.viewControllerType = .TermsAndConditions
             
             vc = staticContent
             break
             //  help
-        case 7:
+        case 6:
             vc = storyboard?.instantiateViewController(withIdentifier: "HelpViewController")
             break
             // logout
-        case 8:
+        case 7:
             
             Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key:"areYouSure", comment: ""), style: .alert, actionColors: [UIColor.green, UIColor.pink], UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key:"cancel", comment: ""), style: .cancel, handler: nil), UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key:"logout", comment: ""), style: .default, handler: { (action) in
                 
@@ -150,6 +148,10 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
                     window.makeKeyAndVisible()
                 })
             }))
+            return
+        case 8 :
+            vc = storyboard?.instantiateViewController(withIdentifier: "messagesViewControllerSideMenu")
+            break
             return
         default:
             return

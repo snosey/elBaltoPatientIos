@@ -80,15 +80,18 @@ class TransactionsViewController: UIViewController {
                             if let value = value.dictionary {
                                 let transaction = TransactionsModel()
                                 transaction.state = value["state"]?.string ?? ""
-                                transaction.amount = value["amount"]?.double ?? 0.0
+                                transaction.amount = value["amount"]?.double?.toInt ?? 0
                                 transaction.paymentWay = value["paymentName"]?.string ?? ""
                                 transaction.created_at = value["created_at"]?.string ?? ""
                                 self.transactions.append(transaction)
                             }
                         })
-                        self.totalAmount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Amount", comment: "")) \(json["Amount"].double ?? 0.0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
+                        
+                        self.totalAmount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Amount", comment: "")) \(json["total_amount"].double?.toInt ?? 0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
+                        
                         self.transactionCount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "transactionNumber", comment: "")) \(self.transactions.count)"
-                        self.totalOutstanding.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "TotalOutstanding", comment: "")) \(json["TotalOutstanding"].double ?? 0.0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
+                        
+                        self.totalOutstanding.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "TotalOutstanding", comment: "")) \(json["total_outstanding"].double?.toInt ?? 0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
                         
                         self.ourTableView.reloadData()
                     }

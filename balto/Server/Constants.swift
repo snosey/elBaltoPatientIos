@@ -13,7 +13,7 @@ import MapKit
 
 public class Constants {
 
-    public static let override = true
+    public static let override = false
     
     public static let API_KEY = ""
     

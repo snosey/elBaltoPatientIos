@@ -129,4 +129,127 @@ class DoctorsAPIS {
         
     }
     
+    class func updateUserTransaction(params: [String: Any], completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.updateUserTransaction
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)
+                    
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
+    }
+    
+    
+    class func getMessages(params: [String: Any], completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.getMessages
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)
+                    
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
+    }
+    
+    class func getMessagesInChat(params: [String: Any], completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.getMessagesInchat
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)
+                    
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
+    }
+    
+    
+    class func createMessage(params: [String: Any], completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.createMessage
+        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)
+                    
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
+    }
+    
+    
+    class func createChat(params: [String: Any], completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.createChat
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)
+                    
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
+    }
+    
+    static func imageToBase64(image: UIImage) -> String? {
+        if let imageData:NSData = UIImagePNGRepresentation(image) as NSData? {
+            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            return strBase64
+        }
+        return nil
+    }
+    
+    
 }
+
+
+
+    
+
+

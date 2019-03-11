@@ -18,9 +18,7 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
     
     @IBOutlet weak var labelPaymentMethod: UIButton!
     @IBOutlet weak var walletCheckedButton: UIButton!
-    
     @IBOutlet weak var labelCreditPan: UILabel!
-    
     @IBOutlet weak var textfieldPromotion: UITextField!
     
     @IBOutlet weak var labelSpecialization: UILabel!
@@ -29,6 +27,7 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
     
     @IBOutlet weak var loadingView: LoadingView!
     
+    @IBOutlet weak var paymentImage: UIImageView!
     
     private var content: ContentSession!
     fileprivate var walletAddedSuccessfully: Bool = false
@@ -137,10 +136,11 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
             if selectedPaymentWay == 1 {
                 // wallet selected
                 let userId = SettingsManager().getUserId()
+                
                 let params = [
                     "user" : userId,
                     "amount": price,
-                    "way": 4,
+                    "way": 6,
                     "state": 4,
                 ] as [String : Any]
                 
@@ -155,21 +155,26 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
                 
                 payment.addCard(vc: self)
             }
-        } else if let _ = coupon { // second case
+        } else if let coupon = coupon { // second case
 
             if selectedPaymentWay == 1 {
+                
+                let price = Float((doctor.price as NSString).integerValue)
+                var newPrice = price - price * coupon.discount
+                newPrice.round(.up)
+                
                 let userId = SettingsManager().getUserId()
                 let params = [
                     "user" : userId,
-                    "amount": price,
-                    "way": 4,
+                    "amount": newPrice,
+                    "way": 6,
                     "state": 4,
-                    ] as [String : Any]
-                sendWalletRequest(amount: Double(price) ,params: params)
+                ] as [String : Any]
+                sendWalletRequest(amount: Double(newPrice) ,params: params)
                 
             } else if let token = PaymentSession.getSavedWith(key: "savedToken"), !token.isEmpty {
                 let userId = SettingsManager().getUserId()
-                content.addBooking(doctor: doctor, userId: userId, schedule: schedule, scheduleKind: 2, paymentMethod: 2, coupon: nil)
+                content.addBooking(doctor: doctor, userId: userId, schedule: schedule, scheduleKind: 2, paymentMethod: 2, coupon: coupon)
             } else {
                 payment.addCard(vc: self)
             }
@@ -183,7 +188,8 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
         
         if !textfieldPromotion.text!.isEmpty {
             isSubmit = false
-            content.checkCopoun(code: textfieldPromotion.text!)
+            let userId = SettingsManager().getUserId()
+            content.checkCopoun(code: textfieldPromotion.text!, id_user: userId)
         }
     }
     
@@ -279,7 +285,10 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
         sender.setImage(#imageLiteral(resourceName: "fillCircle"), for: .normal)
         labelPaymentMethod.setImage(#imageLiteral(resourceName: "emptyCircle"), for: .normal)
         self.selectedPaymentWay = 1 // checked
-        self.labelCreditPan.text = "\(self.moneyInWallet)"
+        self.labelCreditPan.text = "\(Int(self.moneyInWallet))\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
+        
+        self.paymentImage.image = UIImage(named: "money")
+        
     }
     
     @IBAction func creditChecked(_ sender: UIButton){
@@ -288,6 +297,7 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
         self.selectedPaymentWay = 0 // checked
         checkIfCardAssigned()
         
+        self.paymentImage.image = UIImage(named: "credit_blue_small")
     }
     
     func getUserAmount() {
@@ -331,16 +341,8 @@ class ConfirmScheduleViewController: UIViewController, ContentDelegate, PaymentD
                 if json["status"].string == "1" {
                     
                     if let wallet_id = json["data"]["id"].int {
-                        
                         let userId = SettingsManager().getUserId()
-                        self.content.addBooking(doctor: self.doctor, userId: userId, schedule: self.schedule, scheduleKind: 2, paymentMethod: 4, coupon: nil, wallet_id: wallet_id)
-//                        self.dismiss(animated: true, completion: nil)
-                        /*
-                        self.loadingView.setIsLoading(false)
-                        self.dismiss(animated: true, completion: nil)
-                        NotificationCenter.default.post(name: Notification.Name("reloadReservation"), object: nil)
-                        */
-                        
+                        self.content.addBooking(doctor: self.doctor, userId: userId, schedule: self.schedule, scheduleKind: 2, paymentMethod: 4, coupon: (self.coupon != nil) ? self.coupon : nil, wallet_id: wallet_id)
                     }else {
                         Toast.showAlert(viewController: self, text: "Mission Failed")
                         self.loadingView.setIsLoading(false)

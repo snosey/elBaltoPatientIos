@@ -55,7 +55,7 @@ class ConfirmationViewController: UIViewController, UITextFieldDelegate, Account
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        if Constants.language == "ar" {
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
             stackViewNumber.semanticContentAttribute = .forceLeftToRight
         }
         
@@ -86,9 +86,7 @@ class ConfirmationViewController: UIViewController, UITextFieldDelegate, Account
                 text = string
                 
                 if let nextTextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
-                    
                     OperationQueue.main.addOperation {
-                        
                         nextTextField.becomeFirstResponder()
                     }
                 }
@@ -97,9 +95,7 @@ class ConfirmationViewController: UIViewController, UITextFieldDelegate, Account
                 text = string
                 
                 if let prevTextField = self.view.viewWithTag(textField.tag - 1) as? UITextField {
-                    
                     OperationQueue.main.addOperation {
-                        
                         prevTextField.becomeFirstResponder()
                     }
                 }

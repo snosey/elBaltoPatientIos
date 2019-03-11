@@ -122,6 +122,27 @@
 		2EF82F4420BD8B5100FE189A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF82F4620BD8B5100FE189A /* Localizable.strings */; };
 		2EF85BF3207267E80073D4B3 /* OnlineConsultingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF85BF2207267E80073D4B3 /* OnlineConsultingViewController.swift */; };
 		2EFC015220AB032400A9DA8E /* gms_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EFC015120AB032400A9DA8E /* gms_style.json */; };
+		B020011C21918953003BD74E /* doubleToInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020011B21918953003BD74E /* doubleToInt.swift */; };
+		B04007BA21B6C01D00A1CDA9 /* EditReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04007B821B6C01D00A1CDA9 /* EditReviewViewController.swift */; };
+		B04007BB21B6C01D00A1CDA9 /* EditReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04007B921B6C01D00A1CDA9 /* EditReviewViewController.xib */; };
+		B04007BD21B6ECEE00A1CDA9 /* RateBookingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04007BC21B6ECEE00A1CDA9 /* RateBookingAPI.swift */; };
+		B04007BF21B7005B00A1CDA9 /* notificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04007BE21B7005B00A1CDA9 /* notificationNameExt.swift */; };
+		B065BC332223FFF5008B5985 /* messagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC312223FFF5008B5985 /* messagesTableViewCell.swift */; };
+		B065BC342223FFF5008B5985 /* messagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B065BC322223FFF5008B5985 /* messagesTableViewCell.xib */; };
+		B065BC37222403A5008B5985 /* messagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC36222403A5008B5985 /* messagesViewController.swift */; };
+		B065BC3B222404AA008B5985 /* separatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC39222404AA008B5985 /* separatorTableViewCell.swift */; };
+		B065BC3C222404AA008B5985 /* separatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B065BC3A222404AA008B5985 /* separatorTableViewCell.xib */; };
+		B065BC3E22240C80008B5985 /* imageViewext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC3D22240C80008B5985 /* imageViewext.swift */; };
+		B065BC4222243C31008B5985 /* rightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4022243C31008B5985 /* rightChatTableViewCell.swift */; };
+		B065BC4322243C31008B5985 /* rightChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B065BC4122243C31008B5985 /* rightChatTableViewCell.xib */; };
+		B065BC4822243C51008B5985 /* leftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4622243C51008B5985 /* leftChatTableViewCell.swift */; };
+		B065BC4922243C51008B5985 /* leftChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B065BC4722243C51008B5985 /* leftChatTableViewCell.xib */; };
+		B065BC4C22243F4B008B5985 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4B22243F4B008B5985 /* chatViewController.swift */; };
+		B065BC4E22246718008B5985 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4D22246717008B5985 /* Messenger.swift */; };
+		B065BC5022246757008B5985 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4F22246757008B5985 /* UIViewControllerExt.swift */; };
+		B0D43EE6221616EE0076BA1E /* newMainControllerActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */; };
+		B0F30D202226F6B100D4F57E /* doctorViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F30D1E2226F6B100D4F57E /* doctorViewCellTableViewCell.swift */; };
+		B0F30D212226F6B100D4F57E /* doctorViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F30D1F2226F6B100D4F57E /* doctorViewCellTableViewCell.xib */; };
 		D021C00B20FE07CE003E1032 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D021C00A20FE07CE003E1032 /* View.xib */; };
 		D0E5D78820DE543C00415C1B /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5D78620DE543B00415C1B /* SubCategory.swift */; };
 		D0E5D78920DE543C00415C1B /* MainCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5D78720DE543C00415C1B /* MainCategory.swift */; };
@@ -271,6 +292,27 @@
 		2EFC015120AB032400A9DA8E /* gms_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gms_style.json; sourceTree = "<group>"; };
 		96C59370A1AB278980F283BF /* Pods-balto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balto.release.xcconfig"; path = "Pods/Target Support Files/Pods-balto/Pods-balto.release.xcconfig"; sourceTree = "<group>"; };
 		A7509AADDAB814930FF9A0CC /* Pods_ElBalto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElBalto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B020011B21918953003BD74E /* doubleToInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doubleToInt.swift; sourceTree = "<group>"; };
+		B04007B821B6C01D00A1CDA9 /* EditReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewViewController.swift; sourceTree = "<group>"; };
+		B04007B921B6C01D00A1CDA9 /* EditReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditReviewViewController.xib; sourceTree = "<group>"; };
+		B04007BC21B6ECEE00A1CDA9 /* RateBookingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateBookingAPI.swift; sourceTree = "<group>"; };
+		B04007BE21B7005B00A1CDA9 /* notificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationNameExt.swift; sourceTree = "<group>"; };
+		B065BC312223FFF5008B5985 /* messagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesTableViewCell.swift; sourceTree = "<group>"; };
+		B065BC322223FFF5008B5985 /* messagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = messagesTableViewCell.xib; sourceTree = "<group>"; };
+		B065BC36222403A5008B5985 /* messagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesViewController.swift; sourceTree = "<group>"; };
+		B065BC39222404AA008B5985 /* separatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = separatorTableViewCell.swift; sourceTree = "<group>"; };
+		B065BC3A222404AA008B5985 /* separatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = separatorTableViewCell.xib; sourceTree = "<group>"; };
+		B065BC3D22240C80008B5985 /* imageViewext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewext.swift; sourceTree = "<group>"; };
+		B065BC4022243C31008B5985 /* rightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rightChatTableViewCell.swift; sourceTree = "<group>"; };
+		B065BC4122243C31008B5985 /* rightChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rightChatTableViewCell.xib; sourceTree = "<group>"; };
+		B065BC4622243C51008B5985 /* leftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leftChatTableViewCell.swift; sourceTree = "<group>"; };
+		B065BC4722243C51008B5985 /* leftChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = leftChatTableViewCell.xib; sourceTree = "<group>"; };
+		B065BC4B22243F4B008B5985 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
+		B065BC4D22246717008B5985 /* Messenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
+		B065BC4F22246757008B5985 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMainControllerActionViewController.swift; sourceTree = "<group>"; };
+		B0F30D1E2226F6B100D4F57E /* doctorViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		B0F30D1F2226F6B100D4F57E /* doctorViewCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = doctorViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		D021C00A20FE07CE003E1032 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		D0E5D78620DE543B00415C1B /* SubCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
 		D0E5D78720DE543C00415C1B /* MainCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategory.swift; sourceTree = "<group>"; };
@@ -304,6 +346,8 @@
 			children = (
 				0425007B2157D988006FACCA /* getPayments.swift */,
 				042500882157E4CD006FACCA /* urls.swift */,
+				B04007BC21B6ECEE00A1CDA9 /* RateBookingAPI.swift */,
+				B065BC4D22246717008B5985 /* Messenger.swift */,
 			);
 			path = apis;
 			sourceTree = "<group>";
@@ -329,6 +373,10 @@
 			isa = PBXGroup;
 			children = (
 				04AF33412164E07300603E2D /* LocalisableLabel.swift */,
+				B020011B21918953003BD74E /* doubleToInt.swift */,
+				B04007BE21B7005B00A1CDA9 /* notificationNameExt.swift */,
+				B065BC3D22240C80008B5985 /* imageViewext.swift */,
+				B065BC4F22246757008B5985 /* UIViewControllerExt.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -377,6 +425,7 @@
 				2EBDA6BC206D003A00EDD805 /* terms_en.html */,
 				2EFC015120AB032400A9DA8E /* gms_style.json */,
 				2EE2B6C220AB1E3E004B1B1C /* balto-Bridging-Header.h */,
+				042500772157D952006FACCA /* TransactionsViewController.swift */,
 				2EA488E620BEAFDD000C5302 /* clanPro-Bold.ttf */,
 				2EA488E720BEAFDE000C5302 /* clanPro.ttf */,
 				2EF7E16A20D9229300BE277D /* skyline.mp3 */,
@@ -447,6 +496,10 @@
 		2E1B95E42062E08400C682D0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B0F30D1D2226F63C00D4F57E /* doctors */,
+				B065BC3F22243C1F008B5985 /* chat */,
+				B065BC382224044C008B5985 /* separator */,
+				B065BC302223FFDE008B5985 /* messages */,
 				042500852157D9DD006FACCA /* transaction cell */,
 				2EEF211421197B4200611B44 /* PastSectionHeaderView.swift */,
 				2EEF211321197B4100611B44 /* PastSectionHeaderView.xib */,
@@ -512,6 +565,8 @@
 				2E65B71A207372C700729F48 /* ConfirmScheduleViewController.swift */,
 				2EF82F1320BD86D200FE189A /* ConfirmScheduleViewController.xib */,
 				D021C00A20FE07CE003E1032 /* View.xib */,
+				B04007B821B6C01D00A1CDA9 /* EditReviewViewController.swift */,
+				B04007B921B6C01D00A1CDA9 /* EditReviewViewController.xib */,
 			);
 			path = Dialogs;
 			sourceTree = "<group>";
@@ -519,6 +574,8 @@
 		2EDE578B206BCCDF007B4E92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B065BC4A22243F3F008B5985 /* chat */,
+				B065BC3522240396008B5985 /* messages */,
 				0449B28C215AB756002808CD /* aman */,
 				2EF82F2C20BD87FA00FE189A /* Main.storyboard */,
 				2EDE5795206BCF3D007B4E92 /* MainViewController.swift */,
@@ -541,7 +598,7 @@
 				2E23CE6F20A43B8800F18739 /* TrackDoctorViewController.swift */,
 				2EF7E16E20D9368500BE277D /* PatientViewController.swift */,
 				2E1FB03E20DA36B100091694 /* HelpViewController.swift */,
-				042500772157D952006FACCA /* TransactionsViewController.swift */,
+				B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -555,6 +612,76 @@
 				F976CAB974DD7BB13ADC39F9 /* Pods-ElBalto.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B065BC302223FFDE008B5985 /* messages */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC312223FFF5008B5985 /* messagesTableViewCell.swift */,
+				B065BC322223FFF5008B5985 /* messagesTableViewCell.xib */,
+			);
+			path = messages;
+			sourceTree = "<group>";
+		};
+		B065BC3522240396008B5985 /* messages */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC36222403A5008B5985 /* messagesViewController.swift */,
+			);
+			path = messages;
+			sourceTree = "<group>";
+		};
+		B065BC382224044C008B5985 /* separator */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC39222404AA008B5985 /* separatorTableViewCell.swift */,
+				B065BC3A222404AA008B5985 /* separatorTableViewCell.xib */,
+			);
+			path = separator;
+			sourceTree = "<group>";
+		};
+		B065BC3F22243C1F008B5985 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC4522243C42008B5985 /* left */,
+				B065BC4422243C39008B5985 /* right */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		B065BC4422243C39008B5985 /* right */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC4022243C31008B5985 /* rightChatTableViewCell.swift */,
+				B065BC4122243C31008B5985 /* rightChatTableViewCell.xib */,
+			);
+			path = right;
+			sourceTree = "<group>";
+		};
+		B065BC4522243C42008B5985 /* left */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC4622243C51008B5985 /* leftChatTableViewCell.swift */,
+				B065BC4722243C51008B5985 /* leftChatTableViewCell.xib */,
+			);
+			path = left;
+			sourceTree = "<group>";
+		};
+		B065BC4A22243F3F008B5985 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				B065BC4B22243F4B008B5985 /* chatViewController.swift */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		B0F30D1D2226F63C00D4F57E /* doctors */ = {
+			isa = PBXGroup;
+			children = (
+				B0F30D1E2226F6B100D4F57E /* doctorViewCellTableViewCell.swift */,
+				B0F30D1F2226F6B100D4F57E /* doctorViewCellTableViewCell.xib */,
+			);
+			path = doctors;
 			sourceTree = "<group>";
 		};
 		D0CA6877CFF7011917AFC4FE /* Frameworks */ = {
@@ -637,10 +764,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B065BC4922243C51008B5985 /* leftChatTableViewCell.xib in Resources */,
+				B065BC4322243C31008B5985 /* rightChatTableViewCell.xib in Resources */,
 				2EB195002096DE0B000CB23D /* ReservationTableCell.xib in Resources */,
 				2EF82F0720BD860F00FE189A /* AddReviewViewController.xib in Resources */,
 				2E302FBF2063D5EC002715D0 /* GoogleService-Info.plist in Resources */,
 				2EA488E920BEAFDE000C5302 /* clanPro.ttf in Resources */,
+				B04007BB21B6C01D00A1CDA9 /* EditReviewViewController.xib in Resources */,
 				2E1B95702062C35D00C682D0 /* LaunchScreen.storyboard in Resources */,
 				2EF82F4420BD8B5100FE189A /* Localizable.strings in Resources */,
 				2EDE579B206BD28A007B4E92 /* SideMenuCell.xib in Resources */,
@@ -661,7 +791,10 @@
 				2E1824FB2091F3E500224BFE /* terms_ar.html in Resources */,
 				2EF82F2020BD875D00FE189A /* SummaryView.xib in Resources */,
 				2EB75F3320B5D17400D660E5 /* ReviewTableCell.xib in Resources */,
+				B065BC342223FFF5008B5985 /* messagesTableViewCell.xib in Resources */,
 				2EF82F2520BD87CA00FE189A /* Account.storyboard in Resources */,
+				B065BC3C222404AA008B5985 /* separatorTableViewCell.xib in Resources */,
+				B0F30D212226F6B100D4F57E /* doctorViewCellTableViewCell.xib in Resources */,
 				2E00CFF0209343ED0077A4D0 /* ProfessionCollectionCell.xib in Resources */,
 				2E65B7172073706F00729F48 /* ScheduleCollectionCell.xib in Resources */,
 				2EF82F1120BD86D200FE189A /* ConfirmScheduleViewController.xib in Resources */,
@@ -704,6 +837,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/CountryList/CountryList.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
@@ -711,9 +845,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TaskQueue/TaskQueue.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
@@ -724,6 +862,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
@@ -731,9 +870,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TaskQueue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
@@ -771,18 +914,24 @@
 			files = (
 				04E8FF742171052D00A4F627 /* AcceptSDK.framework in Sources */,
 				2E65B72C2073B54500729F48 /* ContentSession.swift in Sources */,
+				B04007BD21B6ECEE00A1CDA9 /* RateBookingAPI.swift in Sources */,
+				B065BC332223FFF5008B5985 /* messagesTableViewCell.swift in Sources */,
 				2E105C1A2074BFDA006F9010 /* SearchResultsViewController.swift in Sources */,
 				2E65B7282073914000729F48 /* DoctorScheduleViewController.swift in Sources */,
 				2EB194FD2096DA4A000CB23D /* HomeVisitPaymentViewController.swift in Sources */,
 				2E65B72E2073BA8300729F48 /* Doctor.swift in Sources */,
 				2E19F59320A33C7B007F8F35 /* DoctorFilterViewController.swift in Sources */,
+				B0F30D202226F6B100D4F57E /* doctorViewCellTableViewCell.swift in Sources */,
 				042500782157D952006FACCA /* TransactionsViewController.swift in Sources */,
 				2E1B95B22062C39F00C682D0 /* AccountSession.swift in Sources */,
 				2E00CFEA209341A00077A4D0 /* ProfessionView.swift in Sources */,
 				2EB9B95920B02F220061022A /* NotificationHandler.swift in Sources */,
 				2E1B95B32062C39F00C682D0 /* BaseUrlSession.swift in Sources */,
+				B065BC37222403A5008B5985 /* messagesViewController.swift in Sources */,
 				2E916E592097749F0011117F /* SummaryView.swift in Sources */,
 				2EBDA6BB206CFDDD00EDD805 /* StaticContentViewController.swift in Sources */,
+				B065BC3E22240C80008B5985 /* imageViewext.swift in Sources */,
+				B065BC4C22243F4B008B5985 /* chatViewController.swift in Sources */,
 				2E19F59020A329A5007F8F35 /* AddReviewViewController.swift in Sources */,
 				2EB195032096E9A1000CB23D /* RadioGroup.swift in Sources */,
 				2E105C182074BFCA006F9010 /* SearchResultTableViewCell.swift in Sources */,
@@ -791,13 +940,18 @@
 				2EF85BF3207267E80073D4B3 /* OnlineConsultingViewController.swift in Sources */,
 				2EDE579A206BD28A007B4E92 /* SideMenuCell.swift in Sources */,
 				2EEF211621197B4200611B44 /* PastSectionHeaderView.swift in Sources */,
+				B065BC4822243C51008B5985 /* leftChatTableViewCell.swift in Sources */,
+				B04007BA21B6C01D00A1CDA9 /* EditReviewViewController.swift in Sources */,
 				2EBDA6B1206CF26A00EDD805 /* PromotionsTableViewController.swift in Sources */,
 				2E1824552091E84400224BFE /* Account2ViewController.swift in Sources */,
 				2E00CFE8209331130077A4D0 /* HomeVisitViewController.swift in Sources */,
 				2E1B95A12062C39F00C682D0 /* SettingsManager.swift in Sources */,
 				2E3581B0208F1DCB000418B2 /* RegistrationViewController.swift in Sources */,
+				B065BC3B222404AA008B5985 /* separatorTableViewCell.swift in Sources */,
 				2E40B82420889C080061115A /* ConfirmationViewController.swift in Sources */,
+				B065BC4222243C31008B5985 /* rightChatTableViewCell.swift in Sources */,
 				0425007E2157D994006FACCA /* LocalizationSystem.swift in Sources */,
+				B020011C21918953003BD74E /* doubleToInt.swift in Sources */,
 				2E00CFF32093576B0077A4D0 /* SpecializationView.swift in Sources */,
 				2E36BA5920BC3C0F0082BAA1 /* PaymentSession.swift in Sources */,
 				0449B28F215AB780002808CD /* amanMessageController.swift in Sources */,
@@ -827,6 +981,7 @@
 				2E1B95B82062C39F00C682D0 /* DatePickerController.swift in Sources */,
 				042500892157E4CD006FACCA /* urls.swift in Sources */,
 				0425007C2157D989006FACCA /* getPayments.swift in Sources */,
+				B065BC5022246757008B5985 /* UIViewControllerExt.swift in Sources */,
 				2EDE5796206BCF3D007B4E92 /* SideMenuTableViewController.swift in Sources */,
 				2ED7684A207E24D300C58B0D /* VideoChatViewController.swift in Sources */,
 				2E302FBA2063AE27002715D0 /* SoicalViewController.swift in Sources */,
@@ -838,11 +993,13 @@
 				2E1B95BA2062C39F00C682D0 /* Palette.swift in Sources */,
 				2EBDA6B7206CF67000EDD805 /* RoundedEdgeView.swift in Sources */,
 				2E65B72020737A5F00729F48 /* UpcomingReservationsViewController.swift in Sources */,
+				B0D43EE6221616EE0076BA1E /* newMainControllerActionViewController.swift in Sources */,
 				04AF33422164E07300603E2D /* LocalisableLabel.swift in Sources */,
 				2E65B7262073873700729F48 /* PastReservationsViewController.swift in Sources */,
 				2E1FB03F20DA36B200091694 /* HelpViewController.swift in Sources */,
 				2E08095A2075FCF2006CDC3B /* Reservation.swift in Sources */,
 				2E1B95D22062CE0600C682D0 /* BaseModel.swift in Sources */,
+				B04007BF21B7005B00A1CDA9 /* notificationNameExt.swift in Sources */,
 				042500872157DA17006FACCA /* transactions.swift in Sources */,
 				2EB75F2C20B5D01900D660E5 /* Review.swift in Sources */,
 				2E5B4BE820631CF20003B901 /* Profession.swift in Sources */,
@@ -850,6 +1007,7 @@
 				D0E5D78920DE543C00415C1B /* MainCategory.swift in Sources */,
 				2E1B95B42062C39F00C682D0 /* Constants.swift in Sources */,
 				2EBDA6BF206D2F5400EDD805 /* Coupon.swift in Sources */,
+				B065BC4E22246718008B5985 /* Messenger.swift in Sources */,
 				2E65B7162073706F00729F48 /* ScheduleCollectionCell.swift in Sources */,
 				2E5B4BE6206317DC0003B901 /* Specialization.swift in Sources */,
 				2EB75F2F20B5D14600D660E5 /* DocTableCell.swift in Sources */,
@@ -1075,6 +1233,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = balto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbalto.balto.patient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1103,6 +1262,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = balto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbalto.balto.patient;

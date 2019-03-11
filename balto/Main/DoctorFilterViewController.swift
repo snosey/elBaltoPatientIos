@@ -17,15 +17,10 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     let DATE_PICKER_TAG = 7
     
     @IBOutlet weak var buttonProfession: UIButton!
-    
     @IBOutlet weak var buttonSpecialization: UIButton!
-    
     @IBOutlet weak var buttonGender: UIButton!
-    
     @IBOutlet weak var buttonLanguage: UIButton!
-    
     @IBOutlet weak var labelDate: UILabel!
-    
     @IBOutlet weak var textFieldName: UITextField!
     
     var content: ContentSession!

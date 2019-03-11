@@ -19,5 +19,5 @@ target 'ElBalto' do
   pod 'AuthorizeNetAccept', '0.3.0'
   pod 'CountryList'
   pod 'SwiftyJSON'
-
+  pod 'PusherSwift'
 end

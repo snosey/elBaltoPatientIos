@@ -255,7 +255,15 @@ class UpcomingReservationsViewController: UIViewController, ContentDelegate, Pay
                         }
                         
                         if reservation.stateId < 3 {
-                            
+                        
+                            if let wallet_id = reservation.wallet_id, wallet_id != 0 {
+                                let params = [
+                                    "id": wallet_id,
+                                    "state": 6,
+                                ] as [String : Any]
+                                DoctorsAPIS.updateUserTransaction(params: params, completion: { (success, error) in
+                                })
+                            }
                             content.updateBooking(with: reservation, toState: 9)
                         } else {
                             

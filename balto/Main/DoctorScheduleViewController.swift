@@ -103,11 +103,11 @@ class DoctorScheduleViewController: UIViewController, UICollectionViewDelegate, 
         }
         
         // listen
-        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadReservation), name: Notification.Name("reloadReservation"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadReservation), name: Notification.Name("reloadReservation"), object: nil)
         
     }
     
-    @objc func reloadReservation() {
+    /* @objc func reloadReservation() {
         
         let first  = self.navigationController?.viewControllers.first
         self.navigationController?.popToRootViewController(animated: false)
@@ -119,7 +119,7 @@ class DoctorScheduleViewController: UIViewController, UICollectionViewDelegate, 
             main.replaceViewController(vc)
         }
         
-    }
+    } */
     
     
     override func viewDidAppear(_ animated: Bool) {

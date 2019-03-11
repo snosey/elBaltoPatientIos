@@ -17,6 +17,18 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
+   
+    @IBInspectable var shadowSize: CGSize {
+        set {
+            self.layer.shadowOffset = shadowSize
+            self.layer.shadowOpacity = 0.5
+            self.layer.shadowRadius = 2.0
+            self.layer.masksToBounds = false
+        }
+        get {
+            return self.layer.shadowOffset
+        }
+    }
     
     @IBInspectable var borderWidth: CGFloat {
         get {
@@ -40,6 +52,7 @@ extension UIView {
 import UIKit
 import SwiftyJSON
 
+    
 class PaymentViewController: UIViewController, PaymentDelegate{
     
     override func viewDidLoad() {
@@ -72,10 +85,7 @@ class PaymentViewController: UIViewController, PaymentDelegate{
         loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         loadingView.isHidden = true
         self.view.addSubview(loadingView)
-        
-        
-        
-        
+     
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -59,7 +59,7 @@ class PromotionsTableViewController: UITableViewController, ContentDelegate, Acc
     
     func showNoPromotionsAlert() {
         
-        Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "no_prom_share", comment: ""), style: .alert, actionColors: [UIColor.pink, UIColor.green], UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "cancel", comment: ""), style: .cancel, handler: { (action) in
+        Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key: "noPromo", comment: ""), style: .alert, actionColors: [UIColor.pink, UIColor.green], UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key: "cancel", comment: ""), style: .cancel, handler: { (action) in
             
             let first  = self.navigationController?.viewControllers.first
             self.navigationController?.popToRootViewController(animated: false)

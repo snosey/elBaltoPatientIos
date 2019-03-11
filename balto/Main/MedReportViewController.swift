@@ -13,7 +13,7 @@ class MedReportViewController: UIViewController {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelSpecialization: UILabel!
     
-    @IBOutlet weak var imageViewProfile: UIImageView!
+    //@IBOutlet weak var imageViewProfile: UIImageView!
     
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDate: UILabel!
@@ -74,5 +74,10 @@ class MedReportViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    @IBAction func back(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -46,8 +46,6 @@
 "chooseLocation" = "Where can you provide this service?";
 "typeOfService" = "Choose type of services";
 
-
-
 "Home" = "Home";
 "reservation" = "Reservations";
 "promotions" = "Promotions";
@@ -60,13 +58,13 @@
 "back" = "back";
 "noPromo" = "No promotions available , share application to get promotions.";
 "emailDescription" = "For promotions, changing password and important notifications";
-"homeMain" = "HOME VISIT";
+"homeMain" = "HOME VISIT ( SOON )";
 "onlineMain" = "ONLINE CONSULTATION";
 "agreeConditions" = "I agree to the terms and conditions";
 "Register" = "Register";
 "yourLocation" = "Your Location";
 "selectService" = "Select Service Category";
-"cash" = "Cash";
+"cash" = " Cash ";
 "change" = "Change";
 "baseFare" = "Base Fare";
 "serviceDuration" = "Service Duration";
@@ -78,7 +76,7 @@
 "estimatedFare" = "Total Fare";
 "schedule" = "Schedule";
 "requestNow" = "Request Now";
-"promoCodeRequest" = "Promo Code";
+"promoCodeRequest" = "Referral ID";
 "available" = "Available";
 "offline" = "Offline";
 "noProfissional" = "No professional available";
@@ -89,6 +87,9 @@
 "coming" = "Upcoming";
 "past" = "Past";
 "alarmComingReservation" = "You have reservation in 15 minute";
+"alarmComingReservation5" = "You have reservation in 5 minute";
+"alarmComingReservation1" = "You have reservation in 1 minute";
+
 "alarmComingReservationNow" = "You have reservation Now";
 "ProfissionalBusy" = "All our professionals are busy now with other clients, you will be contacted shortly";
 "optional" = "Optional";
@@ -158,8 +159,8 @@
 "Amount" = "Amount: ";
 "state" = "Status: ";
 "paymentWay" = "Payment Method: ";
-"aman" = " AMAN ";
-"ewallet" = " Phone cash ";
+"aman" = " AMAN";
+"ewallet" = " Phone cash";
 "wrongAmount" = "Please enter correct amount";
 "wrongPhone" = "Wrong phone number";
 "TotalPaidCredit" = "Total pay by credit card:";
@@ -193,4 +194,9 @@
 "arrive" = "Arrive";
 "cashReceived" = "Cash Received: ";
 "pending" = "Pending: ";
-"myLang" = "English" ;
+"myLang" = "عربي" ;
+"passwords_not_matching" = "password and confirmation password are not the same";
+"shortPassword" = "your password must be 8-16 characters" ;
+"newLang" = "ع";
+"chat" = "Chat";
+"messages" = "Messages" ;

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +15,7 @@
                 <outlet property="loadingView" destination="IGC-19-xsR" id="kpZ-o4-GBb"/>
                 <outlet property="scrollView" destination="mHq-SX-Dg9" id="xoX-AK-5Ia"/>
                 <outlet property="textViewReview" destination="CDX-c7-eiv" id="9uM-7k-bDa"/>
-                <outlet property="view" destination="ZUm-55-baZ" id="SKl-c1-YjA"/>
+                <outlet property="view" destination="ZUm-55-baZ" id="FRk-Sp-OZM"/>
                 <outlet property="viewBack" destination="Vee-pf-cFo" id="Mhb-aD-1c0"/>
             </connections>
         </placeholder>
@@ -32,8 +30,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-Uo-Re7">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-pf-cFo" customClass="RoundedShadowView" customModule="ElBalto" customModuleProvider="target">
-                                    <rect key="frame" x="37" y="224" width="300" height="219"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-pf-cFo" customClass="RoundedShadowView">
+                                    <rect key="frame" x="37.5" y="224" width="300" height="219"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-j9-gf5" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="32" y="16" width="236" height="48"/>
@@ -151,7 +149,7 @@
                 <constraint firstItem="IGC-19-xsR" firstAttribute="leading" secondItem="ZUm-55-baZ" secondAttribute="leading" id="f6Q-1W-tpR"/>
                 <constraint firstAttribute="bottom" secondItem="mHq-SX-Dg9" secondAttribute="bottom" id="geN-Th-35l"/>
             </constraints>
-            <point key="canvasLocation" x="34.5" y="53.5"/>
+            <point key="canvasLocation" x="28" y="-152"/>
         </view>
     </objects>
 </document>
