@@ -40,7 +40,7 @@ public class ContentSession: BaseUrlSession {
         let actionType = ActionType.getDoctorFilters
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/doctorFiltterData?")
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         requestConnection(action: actionType, url: url.build(), shouldLoadFromCache: true)
     }
@@ -51,7 +51,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/fillterOnlineDoctor?")
             .put("name", name)
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         if let sub = subId {
             
@@ -87,7 +87,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/getAvailableDoctorToChat?")
             .put("name", name)
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         if let sub = subId {
             
@@ -363,7 +363,7 @@ public class ContentSession: BaseUrlSession {
         
         url.put("id_\(type)", userId)
             .put("type", type)
-            .put("lang", Constants.language)
+            .put("lang", LocalizationSystem.sharedInstance.getLanguage())
             .put("state", state)
         
         if let date = date {
@@ -385,7 +385,7 @@ public class ContentSession: BaseUrlSession {
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/bookingData?")
             .put("id_booking", bookingId)
             .put("type", "client")
-            .put("language", Constants.language)
+            .put("language", LocalizationSystem.sharedInstance.getLanguage())
         
         requestConnection(action: actionType, url: url.build(), shouldCache: false)
     }
@@ -433,7 +433,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/doctorData?")
             .put("id_doctor", doctorId)
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         requestConnection(action: actionType, url: url.build(), shouldCache: true)
     }
@@ -475,7 +475,7 @@ public class ContentSession: BaseUrlSession {
         let actionType = ActionType.mainCategories
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/mainCategory?")
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         requestConnection(action: actionType, url: url.build(), shouldLoadFromCache: true)
     }
@@ -486,7 +486,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/subCategoryByMain?")
         
-        url.put("type", Constants.language)
+        url.put("type", LocalizationSystem.sharedInstance.getLanguage())
             .put("id_main", mainId)
             .put("id_doctor_kind", "1")
         
@@ -745,7 +745,7 @@ public class ContentSession: BaseUrlSession {
         
         let url = UrlBuilder(baseUrl: "http://haseboty.com/doctor/public/api/clientData?")
             .put("id_client", userId)
-            .put("type", Constants.language)
+            .put("type", LocalizationSystem.sharedInstance.getLanguage())
         
         requestConnection(action: actionType, url: url.build(), shouldCache: true)
     }

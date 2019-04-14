@@ -68,7 +68,7 @@ class MedReportViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "med_report", comment: "")
+        self.navigationController?.navigationBar.topItem?.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "medReport", comment: "")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,7 +76,7 @@ class MedReportViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
-    @IBAction func back(_ sender: UIButton) {
+    @IBAction override func back(_ sender: UIButton) {
         
         self.navigationController?.popViewController(animated: true)
     }

@@ -16,6 +16,8 @@ class newMainControllerActionViewController: UIViewController, AccountDelegate {
     
     private var account: AccountSession!
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,8 @@ class newMainControllerActionViewController: UIViewController, AccountDelegate {
             self.onlineImage.setImage(UIImage(named: "book_anappoinment"), for: .normal)
             self.homeVisitImage.setImage(UIImage(named: "see_medical_report"), for: .normal)
         }
+        
+        self.userNameLabel.text = "Hi, \(SettingsManager().getFullName())"
     }
     
     @IBAction func share(_ sender: UIButton) {
@@ -60,15 +64,16 @@ class newMainControllerActionViewController: UIViewController, AccountDelegate {
         Toast.showAlert(viewController: self, text: "Coming Soon")
     }
     
+    @IBAction func chatBtnClicked(_ sender: UIButton) {
+        
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openChooseDoctorTochatwithVC" {
+            if let dest = segue.destination as? OnlineConsultingViewController {
+                dest.forChat = true 
+            }
+        }
+    }
     
 }

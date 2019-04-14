@@ -18,7 +18,7 @@ class MainViewController: UIViewController, ContentDelegate {
     var sideMenu: UISideMenuNavigationController!
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var userNameLabel: UILabel!
+    
     
     private var loadingView: LoadingView!
     
@@ -66,10 +66,6 @@ class MainViewController: UIViewController, ContentDelegate {
         
         // listen
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadReservation), name: Notification.Name("reloadReservation"), object: nil)
-        
-        self.userNameLabel.text = "Hi, \(SettingsManager().getFullName())"
-        
-        
        
     }
     
@@ -147,6 +143,7 @@ class MainViewController: UIViewController, ContentDelegate {
             }
         }
     }
+    
     @IBAction func changeLanguage(_ sender: UIBarButtonItem) {
         
         self.dismiss(animated: false, completion: nil)
@@ -195,13 +192,7 @@ class MainViewController: UIViewController, ContentDelegate {
     func onPostExecute(status: BaseUrlSession.Status, action: ContentSession.ActionType, response: Any!) {
         content = nil
     }
-
-    
-    @IBAction func chatBtnClicked(_ sender: UIButton) {
-        
-    }
    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == nib_identifier {
             if let dest = segue.destination as? OnlineConsultingViewController {

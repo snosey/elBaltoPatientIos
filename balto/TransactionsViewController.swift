@@ -56,6 +56,16 @@ class TransactionsViewController: UIViewController {
         }
         
         self.navigationController?.navigationBar.topItem?.title = LocalizationSystem.sharedInstance.localizedStringForKey(key: "wallet", comment: "")
+        
+        let amount = LocalizationSystem.sharedInstance.localizedStringForKey(key: "Settled", comment: "")
+        let outstanding = LocalizationSystem.sharedInstance.localizedStringForKey(key: "TotalOutstanding", comment: "")
+        let transaction = LocalizationSystem.sharedInstance.localizedStringForKey(key: "transactionNumber", comment: "")
+        let egp = LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: "")
+        
+        self.totalOutstanding.text = "\(outstanding): 0.0 \(egp)"
+        self.totalAmount.text = "\(amount): 0.0 \(egp)"
+        self.transactionCount.text = "\(transaction): 0"
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,11 +79,11 @@ class TransactionsViewController: UIViewController {
         let lang = LocalizationSystem.sharedInstance.getLanguage()
         
         DoctorsAPIS.getDoctorPayments(lang: lang, doctorId: doctorId) { (data, error) in
-            if error != nil {
+            if error == nil {
                 print("error")
                 self.loadingView.setIsLoading(false)
             }else {
-                let json = JSON(data!)
+                let json = JSON(data)
                 if json["status"] == "1" {
                     if let trans = json["data"].array {
                         trans.forEach({ (value) in
@@ -87,7 +97,7 @@ class TransactionsViewController: UIViewController {
                             }
                         })
                         
-                        self.totalAmount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Amount", comment: "")) \(json["total_amount"].double?.toInt ?? 0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
+                        self.totalAmount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "Amount", comment: "")) \(json["Settled"].double?.toInt ?? 0) \(LocalizationSystem.sharedInstance.localizedStringForKey(key: "egp", comment: ""))"
                         
                         self.transactionCount.text = "\(LocalizationSystem.sharedInstance.localizedStringForKey(key: "transactionNumber", comment: "")) \(self.transactions.count)"
                         

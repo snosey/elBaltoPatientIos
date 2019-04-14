@@ -72,7 +72,7 @@ class RegistrationViewController: UIViewController, AccountDelegate, PickerDeleg
         countryList.delegate = self
         textFieldCountryCode.addTarget(self, action: #selector(self.viewPicker), for: .editingDidBegin)
         textFieldCountryCode.inputView = UIView()
-        account.getRegistrationData(language: Constants.language)
+        account.getRegistrationData(language: LocalizationSystem.sharedInstance.getLanguage())
         
         textFieldCountryCode.text = "20"
         

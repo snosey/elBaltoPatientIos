@@ -13,7 +13,7 @@ public class AccountSession: BaseUrlSession {
     
     var delegate: AccountDelegate!
     
-    var language = Constants.language
+    var language = LocalizationSystem.sharedInstance.getLanguage()
     
     public enum ActionType {
         case getRegistrationData, getGender, geState, getLanguage, getCities, getProfessions,

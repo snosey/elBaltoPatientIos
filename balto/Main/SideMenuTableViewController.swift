@@ -11,12 +11,13 @@ import SideMenu
 
 class SideMenuTableViewController: UITableViewController, AccountDelegate {
 
-    let itemNames = ["Home", "reservation", "myCredit", "promotions", /*"messages",*/ "share", "termAndCondition", "help", "logout"]
+    let itemNames = ["Home", "reservation", "myCredit", "promotions", "messages", "share", "termAndCondition", "help", "logout"]
     
-    let itemImages = ["ic_home_blue", "reservation", "ic_payment_blue", "promo", /*"26_chat",*/ "share-512", "terms and cond", "14_help", "log_out"]
+    let itemImages = ["ic_home_blue", "reservation", "ic_payment_blue", "promo", "26_chat", "share-512", "terms and cond", "14_help", "log_out"]
     
     @IBOutlet weak var imageViewProfile: UIImageView!
     @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var versionLabel: UILabel!
     
     var sideMenu: UISideMenuNavigationController!
     
@@ -36,6 +37,9 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
         
         tableView.estimatedSectionHeaderHeight = 10
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        if let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String {
+            self.versionLabel.text = "version \(appVersion)"
+        }
         
     }
     
@@ -84,7 +88,7 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
             vc = PromotionsTableViewController()
             break
             // share
-        case 4:
+        case 5:
             let userId = SettingsManager().getUserId()
             account.addCoupon(userId: userId)
             return
@@ -115,18 +119,18 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
             
             return
             // terms_and_cond
-        */case 5:
+        */case 6:
             let staticContent = storyboard?.instantiateViewController(withIdentifier: "StaticContentViewController") as! StaticContentViewController
             staticContent.viewControllerType = .TermsAndConditions
             
             vc = staticContent
             break
             //  help
-        case 6:
+        case 7:
             vc = storyboard?.instantiateViewController(withIdentifier: "HelpViewController")
             break
             // logout
-        case 7:
+        case 8:
             
             Toast.showAlert(viewController: self, text: LocalizationSystem.sharedInstance.localizedStringForKey(key:"areYouSure", comment: ""), style: .alert, actionColors: [UIColor.green, UIColor.pink], UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key:"cancel", comment: ""), style: .cancel, handler: nil), UIAlertAction(title: LocalizationSystem.sharedInstance.localizedStringForKey(key:"logout", comment: ""), style: .default, handler: { (action) in
                 
@@ -149,10 +153,9 @@ class SideMenuTableViewController: UITableViewController, AccountDelegate {
                 })
             }))
             return
-        case 8 :
+        case 4 :
             vc = storyboard?.instantiateViewController(withIdentifier: "messagesViewControllerSideMenu")
             break
-            return
         default:
             return
         }

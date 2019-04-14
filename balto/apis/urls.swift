@@ -22,5 +22,6 @@ struct APIS_URLS {
     static let getMessagesInchat : String = "http://haseboty.com/doctor/public/api/getMessages"
     static let createMessage : String = "http://haseboty.com/doctor/public/api/createMessage"
     static let createChat : String = "http://haseboty.com/doctor/public/api/createChat"
+    static let specialization : String = "http://haseboty.com/doctor/public/api/doctorFiltterData"
     
 }

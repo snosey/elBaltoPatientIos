@@ -15,7 +15,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     let GENDER_PICKER_TAG = 5
     let LANGUAGE_PICKER_TAG = 6
     let DATE_PICKER_TAG = 7
-    
+    let any = LocalizationSystem.sharedInstance.localizedStringForKey(key: "any", comment: "Any")
     @IBOutlet weak var buttonProfession: UIButton!
     @IBOutlet weak var buttonSpecialization: UIButton!
     @IBOutlet weak var buttonGender: UIButton!
@@ -67,10 +67,10 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        buttonProfession.setTitle("Any", for: .normal)
-        buttonSpecialization.setTitle("Any", for: .normal)
-        buttonGender.setTitle("Any", for: .normal)
-        buttonLanguage.setTitle("Any", for: .normal)
+        buttonProfession.setTitle(self.any, for: .normal)
+        buttonSpecialization.setTitle(self.any, for: .normal)
+        buttonGender.setTitle(self.any, for: .normal)
+        buttonLanguage.setTitle(self.any, for: .normal)
         
         content.getDoctorFilters()
     }
@@ -89,7 +89,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     @IBAction func pickProfession(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        names.append(self.any)
         for item in categories {
             
             names.append(item.name)
@@ -101,7 +101,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     @IBAction func pickSpecialization(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        names.append(self.any)
         if let subCategories = category?.subCategories {
             
             for item in subCategories {
@@ -116,7 +116,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     @IBAction func pickLanguage(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        names.append(self.any)
         
         for item in languages {
             
@@ -130,7 +130,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
     @IBAction func pickGender(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        names.append(self.any)
         
         for item in genders {
             
@@ -155,10 +155,10 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
             if index == 0 {
                 
                 category = nil
-                buttonProfession.setTitle("Any", for: .normal)
+                buttonProfession.setTitle(self.any, for: .normal)
                 
                 subcategory = nil
-                buttonSpecialization.setTitle("Any", for: .normal)
+                buttonSpecialization.setTitle(self.any, for: .normal)
             } else {
                 
                 category = categories[index - 1]
@@ -170,7 +170,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
             if index == 0 {
                 
                 subcategory = nil
-                buttonSpecialization.setTitle("Any", for: .normal)
+                buttonSpecialization.setTitle(self.any, for: .normal)
             } else {
                 
                 subcategory = category.subCategories[index - 1]
@@ -182,7 +182,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
             if index == 0 {
                 
                 language = nil
-                buttonLanguage.setTitle("Any", for: .normal)
+                buttonLanguage.setTitle(self.any, for: .normal)
             } else {
                 
                 language = languages[index - 1]
@@ -194,7 +194,7 @@ class DoctorFilterViewController: UIViewController, ContentDelegate, PickerDeleg
             if index == 0 {
                 
                 gender = nil
-                buttonGender.setTitle("Any", for: .normal)
+                buttonGender.setTitle(self.any, for: .normal)
             } else {
                 
                 gender = genders[index - 1]

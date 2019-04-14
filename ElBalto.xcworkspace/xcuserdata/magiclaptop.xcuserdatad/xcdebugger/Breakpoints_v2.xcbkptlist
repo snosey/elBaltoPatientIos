@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "balto/Cells/ReservationTableCell.swift"
-            timestampString = "565701604.514912"
+            timestampString = "574252564.892174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
@@ -26,7 +26,7 @@
                   moduleName = "ElBalto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magiclaptop/Desktop/Swift/Projects/Balto_Patient_ios/balto/Cells/ReservationTableCell.swift"
-                  timestampString = "573925715.7024879"
+                  timestampString = "576930375.762311"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "214"
@@ -41,7 +41,7 @@
                   moduleName = "ElBalto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magiclaptop/Desktop/Swift/Projects/Balto_Patient_ios/balto/Cells/ReservationTableCell.swift"
-                  timestampString = "573925715.705743"
+                  timestampString = "576930375.765721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "216"
@@ -49,6 +49,22 @@
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "balto/Main/chat/chatViewController.swift"
+            timestampString = "574865403.173985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

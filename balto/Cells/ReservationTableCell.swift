@@ -312,7 +312,7 @@ class ReservationTableCell: UITableViewCell {
         } else {
             
             buttonAction2.setImage(nil, for: .normal)
-            buttonAction2.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "med_report", comment: ""), for: .normal)
+            buttonAction2.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "medReport", comment: ""), for: .normal)
             buttonAction2.setTitleColor(UIColor.white, for: .normal)
             buttonAction2.setBackgroundImage(UIImage(named: "book_button"), for: .normal)
             buttonAction2.tag = 6
@@ -347,7 +347,7 @@ class ReservationTableCell: UITableViewCell {
         }
         
         buttonAction2.setImage(nil, for: .normal)
-        buttonAction2.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "med_report", comment: ""), for: .normal)
+        buttonAction2.setTitle(LocalizationSystem.sharedInstance.localizedStringForKey(key: "medReport", comment: ""), for: .normal)
         buttonAction2.setTitleColor(UIColor.white, for: .normal)
         buttonAction2.setBackgroundImage(UIImage(named: "book_button"), for: .normal)
         buttonAction2.tag = 6

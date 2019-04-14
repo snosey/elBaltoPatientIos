@@ -34,5 +34,12 @@ extension UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    
+    @IBAction func back(_ sender: UIButton) {
+        
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        }
+        dismiss(animated: true)
+        
+    }
 }

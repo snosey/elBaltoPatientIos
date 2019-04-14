@@ -209,8 +209,7 @@ class DoctorsAPIS {
                     completion(json, nil)
                 case .failure(let failure) :
                     completion(nil, failure)
-                }
-                
+            }        
         }
         
     }
@@ -243,6 +242,27 @@ class DoctorsAPIS {
             return strBase64
         }
         return nil
+    }
+    
+    class func getSpecializations(completion: @escaping (_ success: JSON?, _ failure: Error?) -> Void) {
+        
+        let url = APIS_URLS.specialization
+        let params = ["type": LocalizationSystem.sharedInstance.getLanguage()]
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (data) in
+                
+                switch data.result {
+                case .success(let success) :
+                    let json = JSON(success)  
+                    //save user email to the next time
+                    completion(json, nil)
+                case .failure(let failure) :
+                    completion(nil, failure)
+                }
+                
+        }
+        
     }
     
     

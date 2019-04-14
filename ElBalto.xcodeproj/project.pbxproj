@@ -16,10 +16,6 @@
 		042500892157E4CD006FACCA /* urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042500882157E4CD006FACCA /* urls.swift */; };
 		0449B28F215AB780002808CD /* amanMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449B28E215AB780002808CD /* amanMessageController.swift */; };
 		04AF33422164E07300603E2D /* LocalisableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF33412164E07300603E2D /* LocalisableLabel.swift */; };
-		04E8FF742171052D00A4F627 /* AcceptSDK.framework in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; };
-		04E8FF75217105EA00A4F627 /* AcceptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; };
-		04E8FF76217105EA00A4F627 /* AcceptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		089F4A318020E61D87A4E46B /* Pods_ElBalto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7509AADDAB814930FF9A0CC /* Pods_ElBalto.framework */; };
 		2E00CFE8209331130077A4D0 /* HomeVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CFE7209331130077A4D0 /* HomeVisitViewController.swift */; };
 		2E00CFEA209341A00077A4D0 /* ProfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CFE9209341A00077A4D0 /* ProfessionView.swift */; };
 		2E00CFEF209343ED0077A4D0 /* ProfessionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00CFED209343ED0077A4D0 /* ProfessionCollectionCell.swift */; };
@@ -122,6 +118,11 @@
 		2EF82F4420BD8B5100FE189A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF82F4620BD8B5100FE189A /* Localizable.strings */; };
 		2EF85BF3207267E80073D4B3 /* OnlineConsultingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF85BF2207267E80073D4B3 /* OnlineConsultingViewController.swift */; };
 		2EFC015220AB032400A9DA8E /* gms_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EFC015120AB032400A9DA8E /* gms_style.json */; };
+		B00EADB62262604200093D2E /* oneSelectorPopUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EADB52262604200093D2E /* oneSelectorPopUPViewController.swift */; };
+		B00EADB92262606100093D2E /* PopupHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EADB82262606100093D2E /* PopupHandler.swift */; };
+		B00EADBB2262608200093D2E /* popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00EADBA2262608200093D2E /* popup.storyboard */; };
+		B00EADBE2262675400093D2E /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EADBD2262675400093D2E /* QuestionViewController.swift */; };
+		B00EADC022626BF300093D2E /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EADBF22626BF300093D2E /* NotificationNameExt.swift */; };
 		B020011C21918953003BD74E /* doubleToInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B020011B21918953003BD74E /* doubleToInt.swift */; };
 		B04007BA21B6C01D00A1CDA9 /* EditReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04007B821B6C01D00A1CDA9 /* EditReviewViewController.swift */; };
 		B04007BB21B6C01D00A1CDA9 /* EditReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04007B921B6C01D00A1CDA9 /* EditReviewViewController.xib */; };
@@ -140,6 +141,15 @@
 		B065BC4C22243F4B008B5985 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4B22243F4B008B5985 /* chatViewController.swift */; };
 		B065BC4E22246718008B5985 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4D22246717008B5985 /* Messenger.swift */; };
 		B065BC5022246757008B5985 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065BC4F22246757008B5985 /* UIViewControllerExt.swift */; };
+		B06BDDD2223FE56500D42530 /* AcceptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; };
+		B06BDDD3223FE56C00D42530 /* Pods_ElBalto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7509AADDAB814930FF9A0CC /* Pods_ElBalto.framework */; };
+		B06BDDD4223FE57600D42530 /* AcceptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; };
+		B06BDDD5223FE57600D42530 /* AcceptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2B6C720AB1F51004B1B1C /* AcceptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0B858F2225E72830073C825 /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B858F1225E72830073C825 /* chat.storyboard */; };
+		B0B858F6225E7A020073C825 /* specializationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B858F4225E7A020073C825 /* specializationTableViewCell.swift */; };
+		B0B858F7225E7A020073C825 /* specializationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B858F5225E7A020073C825 /* specializationTableViewCell.xib */; };
+		B0B858FA225E7B480073C825 /* chatSpecializationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B858F9225E7B480073C825 /* chatSpecializationsViewController.swift */; };
+		B0B858FC225E7BC30073C825 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B858FB225E7BC30073C825 /* UITableView.swift */; };
 		B0D43EE6221616EE0076BA1E /* newMainControllerActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */; };
 		B0F30D202226F6B100D4F57E /* doctorViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F30D1E2226F6B100D4F57E /* doctorViewCellTableViewCell.swift */; };
 		B0F30D212226F6B100D4F57E /* doctorViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F30D1F2226F6B100D4F57E /* doctorViewCellTableViewCell.xib */; };
@@ -149,13 +159,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		04E8FF77217105EA00A4F627 /* Embed Frameworks */ = {
+		B06BDDD6223FE57600D42530 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				04E8FF76217105EA00A4F627 /* AcceptSDK.framework in Embed Frameworks */,
+				B06BDDD5223FE57600D42530 /* AcceptSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +302,11 @@
 		2EFC015120AB032400A9DA8E /* gms_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gms_style.json; sourceTree = "<group>"; };
 		96C59370A1AB278980F283BF /* Pods-balto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-balto.release.xcconfig"; path = "Pods/Target Support Files/Pods-balto/Pods-balto.release.xcconfig"; sourceTree = "<group>"; };
 		A7509AADDAB814930FF9A0CC /* Pods_ElBalto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElBalto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00EADB52262604200093D2E /* oneSelectorPopUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = oneSelectorPopUPViewController.swift; path = "../New Group/oneSelectorPopUPViewController.swift"; sourceTree = "<group>"; };
+		B00EADB82262606100093D2E /* PopupHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHandler.swift; sourceTree = "<group>"; };
+		B00EADBA2262608200093D2E /* popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = popup.storyboard; sourceTree = "<group>"; };
+		B00EADBD2262675400093D2E /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		B00EADBF22626BF300093D2E /* NotificationNameExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationNameExt.swift; path = ../../../TechnoPrint/2OnMarch/extensions/Notification/NotificationNameExt.swift; sourceTree = "<group>"; };
 		B020011B21918953003BD74E /* doubleToInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doubleToInt.swift; sourceTree = "<group>"; };
 		B04007B821B6C01D00A1CDA9 /* EditReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewViewController.swift; sourceTree = "<group>"; };
 		B04007B921B6C01D00A1CDA9 /* EditReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditReviewViewController.xib; sourceTree = "<group>"; };
@@ -310,6 +325,11 @@
 		B065BC4B22243F4B008B5985 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		B065BC4D22246717008B5985 /* Messenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
 		B065BC4F22246757008B5985 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		B0B858F1225E72830073C825 /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
+		B0B858F4225E7A020073C825 /* specializationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = specializationTableViewCell.swift; sourceTree = "<group>"; };
+		B0B858F5225E7A020073C825 /* specializationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = specializationTableViewCell.xib; sourceTree = "<group>"; };
+		B0B858F9225E7B480073C825 /* chatSpecializationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatSpecializationsViewController.swift; sourceTree = "<group>"; };
+		B0B858FB225E7BC30073C825 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMainControllerActionViewController.swift; sourceTree = "<group>"; };
 		B0F30D1E2226F6B100D4F57E /* doctorViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		B0F30D1F2226F6B100D4F57E /* doctorViewCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = doctorViewCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -325,8 +345,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E8FF75217105EA00A4F627 /* AcceptSDK.framework in Frameworks */,
-				089F4A318020E61D87A4E46B /* Pods_ElBalto.framework in Frameworks */,
+				B06BDDD3223FE56C00D42530 /* Pods_ElBalto.framework in Frameworks */,
+				B06BDDD4223FE57600D42530 /* AcceptSDK.framework in Frameworks */,
+				B06BDDD2223FE56500D42530 /* AcceptSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +397,9 @@
 				B020011B21918953003BD74E /* doubleToInt.swift */,
 				B04007BE21B7005B00A1CDA9 /* notificationNameExt.swift */,
 				B065BC3D22240C80008B5985 /* imageViewext.swift */,
+				B00EADBF22626BF300093D2E /* NotificationNameExt.swift */,
 				B065BC4F22246757008B5985 /* UIViewControllerExt.swift */,
+				B0B858FB225E7BC30073C825 /* UITableView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -403,6 +426,7 @@
 		2E1B95642062C35D00C682D0 /* balto */ = {
 			isa = PBXGroup;
 			children = (
+				B00EADB42262601900093D2E /* popups */,
 				04AF33402164E04900603E2D /* extensions */,
 				042500802157D9B3006FACCA /* apis */,
 				0425007F2157D997006FACCA /* localization */,
@@ -496,6 +520,7 @@
 		2E1B95E42062E08400C682D0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B0B858F3225E79E80073C825 /* specialization */,
 				B0F30D1D2226F63C00D4F57E /* doctors */,
 				B065BC3F22243C1F008B5985 /* chat */,
 				B065BC382224044C008B5985 /* separator */,
@@ -574,6 +599,8 @@
 		2EDE578B206BCCDF007B4E92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B00EADBC2262671A00093D2E /* question */,
+				B0B858F8225E7B200073C825 /* specialization-chat */,
 				B065BC4A22243F3F008B5985 /* chat */,
 				B065BC3522240396008B5985 /* messages */,
 				0449B28C215AB756002808CD /* aman */,
@@ -599,6 +626,7 @@
 				2EF7E16E20D9368500BE277D /* PatientViewController.swift */,
 				2E1FB03E20DA36B100091694 /* HelpViewController.swift */,
 				B0D43EE5221616EE0076BA1E /* newMainControllerActionViewController.swift */,
+				B0B858F1225E72830073C825 /* chat.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -612,6 +640,32 @@
 				F976CAB974DD7BB13ADC39F9 /* Pods-ElBalto.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B00EADB42262601900093D2E /* popups */ = {
+			isa = PBXGroup;
+			children = (
+				B00EADB72262604700093D2E /* popup */,
+				B00EADB82262606100093D2E /* PopupHandler.swift */,
+				B00EADBA2262608200093D2E /* popup.storyboard */,
+			);
+			path = popups;
+			sourceTree = "<group>";
+		};
+		B00EADB72262604700093D2E /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				B00EADB52262604200093D2E /* oneSelectorPopUPViewController.swift */,
+			);
+			path = popup;
+			sourceTree = "<group>";
+		};
+		B00EADBC2262671A00093D2E /* question */ = {
+			isa = PBXGroup;
+			children = (
+				B00EADBD2262675400093D2E /* QuestionViewController.swift */,
+			);
+			path = question;
 			sourceTree = "<group>";
 		};
 		B065BC302223FFDE008B5985 /* messages */ = {
@@ -675,6 +729,23 @@
 			path = chat;
 			sourceTree = "<group>";
 		};
+		B0B858F3225E79E80073C825 /* specialization */ = {
+			isa = PBXGroup;
+			children = (
+				B0B858F4225E7A020073C825 /* specializationTableViewCell.swift */,
+				B0B858F5225E7A020073C825 /* specializationTableViewCell.xib */,
+			);
+			path = specialization;
+			sourceTree = "<group>";
+		};
+		B0B858F8225E7B200073C825 /* specialization-chat */ = {
+			isa = PBXGroup;
+			children = (
+				B0B858F9225E7B480073C825 /* chatSpecializationsViewController.swift */,
+			);
+			path = "specialization-chat";
+			sourceTree = "<group>";
+		};
 		B0F30D1D2226F63C00D4F57E /* doctors */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,7 +779,7 @@
 				2E1B95602062C35D00C682D0 /* Resources */,
 				BCA11869B0D3E9BE385274EB /* [CP] Embed Pods Frameworks */,
 				CB50059CBD1941CCEF1A6BAF /* [CP] Copy Pods Resources */,
-				04E8FF77217105EA00A4F627 /* Embed Frameworks */,
+				B06BDDD6223FE57600D42530 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -772,6 +843,7 @@
 				2EA488E920BEAFDE000C5302 /* clanPro.ttf in Resources */,
 				B04007BB21B6C01D00A1CDA9 /* EditReviewViewController.xib in Resources */,
 				2E1B95702062C35D00C682D0 /* LaunchScreen.storyboard in Resources */,
+				B0B858F7225E7A020073C825 /* specializationTableViewCell.xib in Resources */,
 				2EF82F4420BD8B5100FE189A /* Localizable.strings in Resources */,
 				2EDE579B206BD28A007B4E92 /* SideMenuCell.xib in Resources */,
 				2EFC015220AB032400A9DA8E /* gms_style.json in Resources */,
@@ -782,6 +854,7 @@
 				2E0B6CF2209AF6030016C1B0 /* NoItemsView.xib in Resources */,
 				2E1B956D2062C35D00C682D0 /* Assets.xcassets in Resources */,
 				2EB75F3020B5D14600D660E5 /* DocTableCell.xib in Resources */,
+				B00EADBB2262608200093D2E /* popup.storyboard in Resources */,
 				D021C00B20FE07CE003E1032 /* View.xib in Resources */,
 				2E1B95E72062E12100C682D0 /* LocationTableCell.xib in Resources */,
 				042500842157D9D9006FACCA /* transactionTableViewCell.xib in Resources */,
@@ -792,6 +865,7 @@
 				2EF82F2020BD875D00FE189A /* SummaryView.xib in Resources */,
 				2EB75F3320B5D17400D660E5 /* ReviewTableCell.xib in Resources */,
 				B065BC342223FFF5008B5985 /* messagesTableViewCell.xib in Resources */,
+				B0B858F2225E72830073C825 /* chat.storyboard in Resources */,
 				2EF82F2520BD87CA00FE189A /* Account.storyboard in Resources */,
 				B065BC3C222404AA008B5985 /* separatorTableViewCell.xib in Resources */,
 				B0F30D212226F6B100D4F57E /* doctorViewCellTableViewCell.xib in Resources */,
@@ -912,13 +986,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E8FF742171052D00A4F627 /* AcceptSDK.framework in Sources */,
 				2E65B72C2073B54500729F48 /* ContentSession.swift in Sources */,
 				B04007BD21B6ECEE00A1CDA9 /* RateBookingAPI.swift in Sources */,
 				B065BC332223FFF5008B5985 /* messagesTableViewCell.swift in Sources */,
 				2E105C1A2074BFDA006F9010 /* SearchResultsViewController.swift in Sources */,
 				2E65B7282073914000729F48 /* DoctorScheduleViewController.swift in Sources */,
 				2EB194FD2096DA4A000CB23D /* HomeVisitPaymentViewController.swift in Sources */,
+				B00EADBE2262675400093D2E /* QuestionViewController.swift in Sources */,
 				2E65B72E2073BA8300729F48 /* Doctor.swift in Sources */,
 				2E19F59320A33C7B007F8F35 /* DoctorFilterViewController.swift in Sources */,
 				B0F30D202226F6B100D4F57E /* doctorViewCellTableViewCell.swift in Sources */,
@@ -931,10 +1005,13 @@
 				2E916E592097749F0011117F /* SummaryView.swift in Sources */,
 				2EBDA6BB206CFDDD00EDD805 /* StaticContentViewController.swift in Sources */,
 				B065BC3E22240C80008B5985 /* imageViewext.swift in Sources */,
+				B0B858FC225E7BC30073C825 /* UITableView.swift in Sources */,
 				B065BC4C22243F4B008B5985 /* chatViewController.swift in Sources */,
 				2E19F59020A329A5007F8F35 /* AddReviewViewController.swift in Sources */,
 				2EB195032096E9A1000CB23D /* RadioGroup.swift in Sources */,
 				2E105C182074BFCA006F9010 /* SearchResultTableViewCell.swift in Sources */,
+				B00EADC022626BF300093D2E /* NotificationNameExt.swift in Sources */,
+				B00EADB62262604200093D2E /* oneSelectorPopUPViewController.swift in Sources */,
 				2EB75F3420B5D17400D660E5 /* ReviewTableCell.swift in Sources */,
 				2EB195012096DE0B000CB23D /* ReservationTableCell.swift in Sources */,
 				2EF85BF3207267E80073D4B3 /* OnlineConsultingViewController.swift in Sources */,
@@ -990,8 +1067,10 @@
 				2E105C1C2074DF65006F9010 /* Category.swift in Sources */,
 				2E302FB22063A094002715D0 /* LoginViewController.swift in Sources */,
 				2E1B95E12062CE0600C682D0 /* User.swift in Sources */,
+				B00EADB92262606100093D2E /* PopupHandler.swift in Sources */,
 				2E1B95BA2062C39F00C682D0 /* Palette.swift in Sources */,
 				2EBDA6B7206CF67000EDD805 /* RoundedEdgeView.swift in Sources */,
+				B0B858FA225E7B480073C825 /* chatSpecializationsViewController.swift in Sources */,
 				2E65B72020737A5F00729F48 /* UpcomingReservationsViewController.swift in Sources */,
 				B0D43EE6221616EE0076BA1E /* newMainControllerActionViewController.swift in Sources */,
 				04AF33422164E07300603E2D /* LocalisableLabel.swift in Sources */,
@@ -1000,6 +1079,7 @@
 				2E08095A2075FCF2006CDC3B /* Reservation.swift in Sources */,
 				2E1B95D22062CE0600C682D0 /* BaseModel.swift in Sources */,
 				B04007BF21B7005B00A1CDA9 /* notificationNameExt.swift in Sources */,
+				B0B858F6225E7A020073C825 /* specializationTableViewCell.swift in Sources */,
 				042500872157DA17006FACCA /* transactions.swift in Sources */,
 				2EB75F2C20B5D01900D660E5 /* Review.swift in Sources */,
 				2E5B4BE820631CF20003B901 /* Profession.swift in Sources */,

@@ -15,7 +15,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     let PROFESSION_PICKER_TAG = 3
     let SPECIALIZATION_PICKER_TAG = 4
     var forChat: Bool = false
-    
+    let any = LocalizationSystem.sharedInstance.localizedStringForKey(key: "any", comment: "Any")
     @IBOutlet weak var buttonProfession: UIButton!
     
     @IBOutlet weak var buttonSpecialization: UIButton!
@@ -54,7 +54,8 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        buttonProfession.setTitle("Any", for: .normal)
+        let any = LocalizationSystem.sharedInstance.localizedStringForKey(key: "any", comment: "Any")
+        buttonProfession.setTitle(any, for: .normal)
         
         content.getDoctorFilters()
         
@@ -100,7 +101,9 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     @IBAction func pickProfession(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        
+        let any = LocalizationSystem.sharedInstance.localizedStringForKey(key: "any", comment: "Any")
+        names.append(any)
         for item in categories {
             names.append(item.name)
         }
@@ -111,7 +114,8 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
     @IBAction func pickSpecialization(_ sender: UIButton) {
         
         var names = [String]()
-        names.append("Any")
+        
+        names.append(any)
         
         if let subCategories = category?.subCategories {
             for item in subCategories {
@@ -129,7 +133,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
             if index == 0 {
                 
                 category = nil
-                buttonProfession.setTitle("Any", for: .normal)
+                buttonProfession.setTitle(self.any,  for: .normal)
                 
                 subcategory = nil
                 buttonSpecialization.setTitle("", for: .normal)
@@ -138,7 +142,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
                 category = categories[index - 1]
                 buttonProfession.setTitle(category.name, for: .normal)
                 
-                buttonSpecialization.setTitle("Any", for: .normal)
+                buttonSpecialization.setTitle(self.any,  for: .normal)
             }
             break
         case SPECIALIZATION_PICKER_TAG:
@@ -146,7 +150,7 @@ class OnlineConsultingViewController: UIViewController, ContentDelegate, PickerD
             if index == 0 {
                 
                 subcategory = nil
-                buttonSpecialization.setTitle("Any", for: .normal)
+                buttonSpecialization.setTitle(self.any,  for: .normal)
             } else {
                 
                 subcategory = category.subCategories[index - 1]

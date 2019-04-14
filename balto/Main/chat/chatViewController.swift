@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-
 import PusherSwift
 
 let options = PusherClientOptions(
@@ -122,9 +121,11 @@ class chatViewController: UIViewController , UINavigationControllerDelegate {
             guard let message = self.messageTf.text, message.isEmpty == false else { return }
             let params = [
                 "user_id": SettingsManager().getUserId(),
-                "id_chat": self.id_chat,
+                "id_chat": Int(id_chat!),
                 "message": message,
             ] as [String: Any]
+            print(params)
+            
             addMessageRequest(params: params)
         }else if sender.tag == 1 { // file
         
@@ -141,8 +142,9 @@ class chatViewController: UIViewController , UINavigationControllerDelegate {
     }
     
     func addMessageRequest(params: [String: Any]) {
+        
         DoctorsAPIS.createMessage(params: params) { (json, error) in
-            print("errir is \(error != nil)")
+            print("error is \(error != nil)")
             if error == nil {
                 let message = JSON(json)
                 print(message["message"])
@@ -179,7 +181,7 @@ extension chatViewController : UITableViewDataSource, UITableViewDelegate {
                     cell.configCell(message: file)
                 }else {
                     
-                    cell.configCell(message: message["message"].string!)
+                    cell.configCell(message: message["message"]["message"].string!)
                 }
                 // cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
                 return cell

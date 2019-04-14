@@ -152,7 +152,7 @@
 "all" = "All";
 
 "delete" = "DELETE";
-"addToWallet" = "+ Add credit";
+"addToWallet" = "+ ADD CREDIT";
 "payWithAman" = "Pay by AMAN";
 "amanDetails" =  "Your reference number for Aman is  ";
 "amanDetails2" = ". To proceed with the payment, please head to the nearest Aman outlet, ask for ~ مدفوعات متنوعه اكسبت ~ and provide your reference number. To ask about your nearest outlet, please contact Aman's hotline on 19910";
@@ -200,3 +200,4 @@
 "newLang" = "ع";
 "chat" = "Chat";
 "messages" = "Messages" ;
+"any" = "Any";
